@@ -1,6 +1,6 @@
-# Final Project: Tower Defense Game
+# Tower Defense Game
 
-## Team Member
+## Author
 - 資工一 B08902072 黃國銘
 
 ![](./img/f1)
