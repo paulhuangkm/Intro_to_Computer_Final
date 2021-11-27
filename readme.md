@@ -21,7 +21,11 @@ In this game, the players defend the castle from the enemies by building defensi
 
 ## Short Story of My Small Game:
 The roads in the game were not designed to be straight lines at first, and there was a forest around the map when I first drew it (see Figure 8). However, since the forest and curvy roads have no obvious pattern to draw, it would use up too much ROM space, so I modified the map to the one you see today.
+![](./img/f3)
 
 When I first started writing the game, I thought the most difficult part of the project is writing the program. After I finally finished the game and tried to play it, I found out that the most difficult part is actually trying to balance the game. From the health of players, the cost of towers, and the length of roads to the hit point and damage of enemies, it really takes a bunch of work to make the game both winnable and intriguing at the same time.
 
 Another interesting part of the project was translating bitmap images into Jack language. It took quite some time to understand the header format of bitmap. I used C for reading and translating the file.
+
+## Demo Link
+[Youtube](https://www.youtube.com/watch?v=UtlRthFu4qo)
