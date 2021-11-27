@@ -1,0 +1,2413 @@
+function Troop.new 0
+push constant 16
+call Memory.alloc 1
+pop pointer 0
+push constant 1
+push constant 0
+call Soldier.new 2
+pop this 0
+push constant 1
+push constant 0
+call Soldier.new 2
+pop this 1
+push constant 1
+push constant 0
+call Soldier.new 2
+pop this 2
+push constant 1
+push constant 0
+call Soldier.new 2
+pop this 3
+push constant 1
+push constant 0
+call Soldier.new 2
+pop this 4
+push constant 1
+push constant 0
+call Soldier.new 2
+pop this 5
+push constant 1
+push constant 0
+call Soldier.new 2
+pop this 6
+push constant 1
+push constant 0
+call Soldier.new 2
+pop this 7
+push constant 1
+push constant 0
+call Soldier.new 2
+pop this 8
+push constant 1
+push constant 0
+call Soldier.new 2
+pop this 9
+push constant 1
+push constant 0
+call Soldier.new 2
+pop this 10
+push constant 1
+push constant 0
+call Soldier.new 2
+pop this 11
+push constant 1
+push constant 0
+call Soldier.new 2
+pop this 12
+push constant 1
+push constant 0
+call Soldier.new 2
+pop this 13
+push constant 1
+push constant 0
+call Soldier.new 2
+pop this 14
+push pointer 0
+return
+function Troop.addControl 0
+push argument 0
+pop pointer 0
+push argument 1
+pop this 15
+push constant 0
+return
+function Troop.initial 0
+push argument 0
+pop pointer 0
+push this 0
+push constant 1
+push constant 0
+call Soldier.reset 3
+pop temp 0
+push this 1
+push constant 1
+push constant 0
+call Soldier.reset 3
+pop temp 0
+push this 2
+push constant 1
+push constant 0
+call Soldier.reset 3
+pop temp 0
+push this 3
+push constant 1
+push constant 0
+call Soldier.reset 3
+pop temp 0
+push this 4
+push constant 1
+push constant 0
+call Soldier.reset 3
+pop temp 0
+push this 5
+push constant 1
+push constant 0
+call Soldier.reset 3
+pop temp 0
+push this 6
+push constant 1
+push constant 0
+call Soldier.reset 3
+pop temp 0
+push this 7
+push constant 1
+push constant 0
+call Soldier.reset 3
+pop temp 0
+push this 8
+push constant 1
+push constant 0
+call Soldier.reset 3
+pop temp 0
+push this 9
+push constant 1
+push constant 0
+call Soldier.reset 3
+pop temp 0
+push this 10
+push constant 1
+push constant 0
+call Soldier.reset 3
+pop temp 0
+push this 11
+push constant 1
+push constant 0
+call Soldier.reset 3
+pop temp 0
+push this 12
+push constant 1
+push constant 0
+call Soldier.reset 3
+pop temp 0
+push this 13
+push constant 1
+push constant 0
+call Soldier.reset 3
+pop temp 0
+push this 14
+push constant 1
+push constant 0
+call Soldier.reset 3
+pop temp 0
+push constant 0
+return
+function Troop.rx 0
+push argument 0
+pop pointer 0
+push argument 1
+push constant 1
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 0
+call Soldier.rx 1
+return
+label IF_FALSE0
+push argument 1
+push constant 2
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push this 1
+call Soldier.rx 1
+return
+label IF_FALSE1
+push argument 1
+push constant 3
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push this 2
+call Soldier.rx 1
+return
+label IF_FALSE2
+push argument 1
+push constant 4
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push this 3
+call Soldier.rx 1
+return
+label IF_FALSE3
+push argument 1
+push constant 5
+eq
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push this 4
+call Soldier.rx 1
+return
+label IF_FALSE4
+push argument 1
+push constant 6
+eq
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push this 5
+call Soldier.rx 1
+return
+label IF_FALSE5
+push argument 1
+push constant 7
+eq
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push this 6
+call Soldier.rx 1
+return
+label IF_FALSE6
+push argument 1
+push constant 8
+eq
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push this 7
+call Soldier.rx 1
+return
+label IF_FALSE7
+push argument 1
+push constant 9
+eq
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
+push this 8
+call Soldier.rx 1
+return
+label IF_FALSE8
+push argument 1
+push constant 10
+eq
+if-goto IF_TRUE9
+goto IF_FALSE9
+label IF_TRUE9
+push this 9
+call Soldier.rx 1
+return
+label IF_FALSE9
+push argument 1
+push constant 11
+eq
+if-goto IF_TRUE10
+goto IF_FALSE10
+label IF_TRUE10
+push this 10
+call Soldier.rx 1
+return
+label IF_FALSE10
+push argument 1
+push constant 12
+eq
+if-goto IF_TRUE11
+goto IF_FALSE11
+label IF_TRUE11
+push this 11
+call Soldier.rx 1
+return
+label IF_FALSE11
+push argument 1
+push constant 13
+eq
+if-goto IF_TRUE12
+goto IF_FALSE12
+label IF_TRUE12
+push this 12
+call Soldier.rx 1
+return
+label IF_FALSE12
+push argument 1
+push constant 14
+eq
+if-goto IF_TRUE13
+goto IF_FALSE13
+label IF_TRUE13
+push this 13
+call Soldier.rx 1
+return
+label IF_FALSE13
+push argument 1
+push constant 15
+eq
+if-goto IF_TRUE14
+goto IF_FALSE14
+label IF_TRUE14
+push this 14
+call Soldier.rx 1
+return
+label IF_FALSE14
+push constant 0
+return
+function Troop.ry 0
+push argument 0
+pop pointer 0
+push argument 1
+push constant 1
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 0
+call Soldier.ry 1
+return
+label IF_FALSE0
+push argument 1
+push constant 2
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push this 1
+call Soldier.ry 1
+return
+label IF_FALSE1
+push argument 1
+push constant 3
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push this 2
+call Soldier.ry 1
+return
+label IF_FALSE2
+push argument 1
+push constant 4
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push this 3
+call Soldier.ry 1
+return
+label IF_FALSE3
+push argument 1
+push constant 5
+eq
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push this 4
+call Soldier.ry 1
+return
+label IF_FALSE4
+push argument 1
+push constant 6
+eq
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push this 5
+call Soldier.ry 1
+return
+label IF_FALSE5
+push argument 1
+push constant 7
+eq
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push this 6
+call Soldier.ry 1
+return
+label IF_FALSE6
+push argument 1
+push constant 8
+eq
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push this 7
+call Soldier.ry 1
+return
+label IF_FALSE7
+push argument 1
+push constant 9
+eq
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
+push this 8
+call Soldier.ry 1
+return
+label IF_FALSE8
+push argument 1
+push constant 10
+eq
+if-goto IF_TRUE9
+goto IF_FALSE9
+label IF_TRUE9
+push this 9
+call Soldier.ry 1
+return
+label IF_FALSE9
+push argument 1
+push constant 11
+eq
+if-goto IF_TRUE10
+goto IF_FALSE10
+label IF_TRUE10
+push this 10
+call Soldier.ry 1
+return
+label IF_FALSE10
+push argument 1
+push constant 12
+eq
+if-goto IF_TRUE11
+goto IF_FALSE11
+label IF_TRUE11
+push this 11
+call Soldier.ry 1
+return
+label IF_FALSE11
+push argument 1
+push constant 13
+eq
+if-goto IF_TRUE12
+goto IF_FALSE12
+label IF_TRUE12
+push this 12
+call Soldier.ry 1
+return
+label IF_FALSE12
+push argument 1
+push constant 14
+eq
+if-goto IF_TRUE13
+goto IF_FALSE13
+label IF_TRUE13
+push this 13
+call Soldier.ry 1
+return
+label IF_FALSE13
+push argument 1
+push constant 15
+eq
+if-goto IF_TRUE14
+goto IF_FALSE14
+label IF_TRUE14
+push this 14
+call Soldier.ry 1
+return
+label IF_FALSE14
+push constant 0
+return
+function Troop.damage 0
+push argument 0
+pop pointer 0
+push argument 1
+push constant 1
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 0
+push argument 2
+call Soldier.damage 2
+return
+label IF_FALSE0
+push argument 1
+push constant 2
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push this 1
+push argument 2
+call Soldier.damage 2
+return
+label IF_FALSE1
+push argument 1
+push constant 3
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push this 2
+push argument 2
+call Soldier.damage 2
+return
+label IF_FALSE2
+push argument 1
+push constant 4
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push this 3
+push argument 2
+call Soldier.damage 2
+return
+label IF_FALSE3
+push argument 1
+push constant 5
+eq
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push this 4
+push argument 2
+call Soldier.damage 2
+return
+label IF_FALSE4
+push argument 1
+push constant 6
+eq
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push this 5
+push argument 2
+call Soldier.damage 2
+return
+label IF_FALSE5
+push argument 1
+push constant 7
+eq
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push this 6
+push argument 2
+call Soldier.damage 2
+return
+label IF_FALSE6
+push argument 1
+push constant 8
+eq
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push this 7
+push argument 2
+call Soldier.damage 2
+return
+label IF_FALSE7
+push argument 1
+push constant 9
+eq
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
+push this 8
+push argument 2
+call Soldier.damage 2
+return
+label IF_FALSE8
+push argument 1
+push constant 10
+eq
+if-goto IF_TRUE9
+goto IF_FALSE9
+label IF_TRUE9
+push this 9
+push argument 2
+call Soldier.damage 2
+return
+label IF_FALSE9
+push argument 1
+push constant 11
+eq
+if-goto IF_TRUE10
+goto IF_FALSE10
+label IF_TRUE10
+push this 10
+push argument 2
+call Soldier.damage 2
+return
+label IF_FALSE10
+push argument 1
+push constant 12
+eq
+if-goto IF_TRUE11
+goto IF_FALSE11
+label IF_TRUE11
+push this 11
+push argument 2
+call Soldier.damage 2
+return
+label IF_FALSE11
+push argument 1
+push constant 13
+eq
+if-goto IF_TRUE12
+goto IF_FALSE12
+label IF_TRUE12
+push this 12
+push argument 2
+call Soldier.damage 2
+return
+label IF_FALSE12
+push argument 1
+push constant 14
+eq
+if-goto IF_TRUE13
+goto IF_FALSE13
+label IF_TRUE13
+push this 13
+push argument 2
+call Soldier.damage 2
+return
+label IF_FALSE13
+push argument 1
+push constant 15
+eq
+if-goto IF_TRUE14
+goto IF_FALSE14
+label IF_TRUE14
+push this 14
+push argument 2
+call Soldier.damage 2
+return
+label IF_FALSE14
+push constant 0
+return
+function Troop.initial1 1
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+push this 1
+push argument 1
+push constant 2
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push this 4
+push argument 1
+push constant 2
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push this 7
+push argument 1
+push constant 2
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push this 10
+push argument 1
+push constant 2
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push this 13
+push argument 1
+push constant 2
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+return
+function Troop.initial2 1
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+push this 0
+push argument 1
+push constant 1
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push this 3
+push argument 1
+push constant 1
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push this 6
+push argument 1
+push constant 1
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push this 9
+push argument 1
+push constant 1
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push this 12
+push argument 1
+push constant 1
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+return
+function Troop.initial3 1
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+push this 2
+push argument 1
+push constant 3
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push this 5
+push argument 1
+push constant 3
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push this 8
+push argument 1
+push constant 3
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push this 11
+push argument 1
+push constant 3
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push this 14
+push argument 1
+push constant 3
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+return
+function Troop.initial4 1
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+push this 0
+push argument 1
+push constant 1
+call Soldier.reset 3
+pop temp 0
+push this 2
+push argument 1
+push constant 3
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push this 3
+push argument 1
+push constant 1
+call Soldier.reset 3
+pop temp 0
+push this 5
+push argument 1
+push constant 3
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push this 6
+push argument 1
+push constant 1
+call Soldier.reset 3
+pop temp 0
+push this 8
+push argument 1
+push constant 3
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push this 9
+push argument 1
+push constant 1
+call Soldier.reset 3
+pop temp 0
+push this 11
+push argument 1
+push constant 3
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push this 12
+push argument 1
+push constant 1
+call Soldier.reset 3
+pop temp 0
+push this 14
+push argument 1
+push constant 3
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+return
+function Troop.initial5 1
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+push this 0
+push argument 1
+push constant 1
+call Soldier.reset 3
+pop temp 0
+push this 1
+push argument 1
+push constant 2
+call Soldier.reset 3
+pop temp 0
+push this 2
+push argument 1
+push constant 3
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push this 3
+push argument 1
+push constant 1
+call Soldier.reset 3
+pop temp 0
+push this 4
+push argument 1
+push constant 2
+call Soldier.reset 3
+pop temp 0
+push this 5
+push argument 1
+push constant 3
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push this 6
+push argument 1
+push constant 1
+call Soldier.reset 3
+pop temp 0
+push this 7
+push argument 1
+push constant 2
+call Soldier.reset 3
+pop temp 0
+push this 8
+push argument 1
+push constant 3
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push this 9
+push argument 1
+push constant 1
+call Soldier.reset 3
+pop temp 0
+push this 10
+push argument 1
+push constant 2
+call Soldier.reset 3
+pop temp 0
+push this 11
+push argument 1
+push constant 3
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push this 12
+push argument 1
+push constant 1
+call Soldier.reset 3
+pop temp 0
+push this 13
+push argument 1
+push constant 2
+call Soldier.reset 3
+pop temp 0
+push this 14
+push argument 1
+push constant 3
+call Soldier.reset 3
+pop temp 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+push pointer 0
+push argument 2
+push argument 3
+push argument 4
+call Troop.walk 4
+add
+pop local 0
+push local 0
+return
+function Troop.clearRoad 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push constant 236
+push constant 70
+push constant 274
+push constant 100
+call Screen.drawRectangle 4
+pop temp 0
+push constant 87
+push constant 101
+push constant 423
+push constant 138
+call Screen.drawRectangle 4
+pop temp 0
+push constant 87
+push constant 139
+push constant 124
+push constant 255
+call Screen.drawRectangle 4
+pop temp 0
+push constant 236
+push constant 139
+push constant 274
+push constant 255
+call Screen.drawRectangle 4
+pop temp 0
+push constant 386
+push constant 139
+push constant 423
+push constant 255
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return
+function Troop.drawAllSoldier 0
+push argument 0
+pop pointer 0
+push this 0
+call Soldier.rhealth 1
+push constant 0
+gt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 0
+call Soldier.ry 1
+push constant 115
+gt
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push this 0
+call Soldier.drawSoldier 1
+pop temp 0
+goto IF_END1
+label IF_FALSE1
+push this 0
+call Soldier.rx 1
+push constant 239
+lt
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push this 0
+push constant 1
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END2
+label IF_FALSE2
+push this 0
+call Soldier.rx 1
+push constant 246
+gt
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push this 0
+push constant 1
+neg
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END3
+label IF_FALSE3
+push this 0
+call Soldier.drawSoldier 1
+pop temp 0
+label IF_END3
+label IF_END2
+label IF_END1
+label IF_FALSE0
+push this 1
+call Soldier.rhealth 1
+push constant 0
+gt
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push this 1
+call Soldier.ry 1
+push constant 115
+gt
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push this 1
+call Soldier.drawSoldier 1
+pop temp 0
+goto IF_END5
+label IF_FALSE5
+push this 1
+call Soldier.rx 1
+push constant 239
+lt
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push this 1
+push constant 1
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END6
+label IF_FALSE6
+push this 1
+call Soldier.rx 1
+push constant 246
+gt
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push this 1
+push constant 1
+neg
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END7
+label IF_FALSE7
+push this 1
+call Soldier.drawSoldier 1
+pop temp 0
+label IF_END7
+label IF_END6
+label IF_END5
+label IF_FALSE4
+push this 2
+call Soldier.rhealth 1
+push constant 0
+gt
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
+push this 2
+call Soldier.ry 1
+push constant 115
+gt
+if-goto IF_TRUE9
+goto IF_FALSE9
+label IF_TRUE9
+push this 2
+call Soldier.drawSoldier 1
+pop temp 0
+goto IF_END9
+label IF_FALSE9
+push this 2
+call Soldier.rx 1
+push constant 239
+lt
+if-goto IF_TRUE10
+goto IF_FALSE10
+label IF_TRUE10
+push this 2
+push constant 1
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END10
+label IF_FALSE10
+push this 2
+call Soldier.rx 1
+push constant 246
+gt
+if-goto IF_TRUE11
+goto IF_FALSE11
+label IF_TRUE11
+push this 2
+push constant 1
+neg
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END11
+label IF_FALSE11
+push this 2
+call Soldier.drawSoldier 1
+pop temp 0
+label IF_END11
+label IF_END10
+label IF_END9
+label IF_FALSE8
+push this 3
+call Soldier.rhealth 1
+push constant 0
+gt
+if-goto IF_TRUE12
+goto IF_FALSE12
+label IF_TRUE12
+push this 3
+call Soldier.ry 1
+push constant 115
+gt
+if-goto IF_TRUE13
+goto IF_FALSE13
+label IF_TRUE13
+push this 3
+call Soldier.drawSoldier 1
+pop temp 0
+goto IF_END13
+label IF_FALSE13
+push this 3
+call Soldier.rx 1
+push constant 239
+lt
+if-goto IF_TRUE14
+goto IF_FALSE14
+label IF_TRUE14
+push this 3
+push constant 1
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END14
+label IF_FALSE14
+push this 3
+call Soldier.rx 1
+push constant 246
+gt
+if-goto IF_TRUE15
+goto IF_FALSE15
+label IF_TRUE15
+push this 3
+push constant 1
+neg
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END15
+label IF_FALSE15
+push this 3
+call Soldier.drawSoldier 1
+pop temp 0
+label IF_END15
+label IF_END14
+label IF_END13
+label IF_FALSE12
+push this 4
+call Soldier.rhealth 1
+push constant 0
+gt
+if-goto IF_TRUE16
+goto IF_FALSE16
+label IF_TRUE16
+push this 4
+call Soldier.ry 1
+push constant 115
+gt
+if-goto IF_TRUE17
+goto IF_FALSE17
+label IF_TRUE17
+push this 4
+call Soldier.drawSoldier 1
+pop temp 0
+goto IF_END17
+label IF_FALSE17
+push this 4
+call Soldier.rx 1
+push constant 239
+lt
+if-goto IF_TRUE18
+goto IF_FALSE18
+label IF_TRUE18
+push this 4
+push constant 1
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END18
+label IF_FALSE18
+push this 4
+call Soldier.rx 1
+push constant 246
+gt
+if-goto IF_TRUE19
+goto IF_FALSE19
+label IF_TRUE19
+push this 4
+push constant 1
+neg
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END19
+label IF_FALSE19
+push this 4
+call Soldier.drawSoldier 1
+pop temp 0
+label IF_END19
+label IF_END18
+label IF_END17
+label IF_FALSE16
+push this 5
+call Soldier.rhealth 1
+push constant 0
+gt
+if-goto IF_TRUE20
+goto IF_FALSE20
+label IF_TRUE20
+push this 5
+call Soldier.ry 1
+push constant 115
+gt
+if-goto IF_TRUE21
+goto IF_FALSE21
+label IF_TRUE21
+push this 5
+call Soldier.drawSoldier 1
+pop temp 0
+goto IF_END21
+label IF_FALSE21
+push this 5
+call Soldier.rx 1
+push constant 239
+lt
+if-goto IF_TRUE22
+goto IF_FALSE22
+label IF_TRUE22
+push this 5
+push constant 1
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END22
+label IF_FALSE22
+push this 5
+call Soldier.rx 1
+push constant 246
+gt
+if-goto IF_TRUE23
+goto IF_FALSE23
+label IF_TRUE23
+push this 5
+push constant 1
+neg
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END23
+label IF_FALSE23
+push this 5
+call Soldier.drawSoldier 1
+pop temp 0
+label IF_END23
+label IF_END22
+label IF_END21
+label IF_FALSE20
+push this 6
+call Soldier.rhealth 1
+push constant 0
+gt
+if-goto IF_TRUE24
+goto IF_FALSE24
+label IF_TRUE24
+push this 6
+call Soldier.ry 1
+push constant 115
+gt
+if-goto IF_TRUE25
+goto IF_FALSE25
+label IF_TRUE25
+push this 6
+call Soldier.drawSoldier 1
+pop temp 0
+goto IF_END25
+label IF_FALSE25
+push this 6
+call Soldier.rx 1
+push constant 239
+lt
+if-goto IF_TRUE26
+goto IF_FALSE26
+label IF_TRUE26
+push this 6
+push constant 1
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END26
+label IF_FALSE26
+push this 6
+call Soldier.rx 1
+push constant 246
+gt
+if-goto IF_TRUE27
+goto IF_FALSE27
+label IF_TRUE27
+push this 6
+push constant 1
+neg
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END27
+label IF_FALSE27
+push this 6
+call Soldier.drawSoldier 1
+pop temp 0
+label IF_END27
+label IF_END26
+label IF_END25
+label IF_FALSE24
+push this 7
+call Soldier.rhealth 1
+push constant 0
+gt
+if-goto IF_TRUE28
+goto IF_FALSE28
+label IF_TRUE28
+push this 7
+call Soldier.ry 1
+push constant 115
+gt
+if-goto IF_TRUE29
+goto IF_FALSE29
+label IF_TRUE29
+push this 7
+call Soldier.drawSoldier 1
+pop temp 0
+goto IF_END29
+label IF_FALSE29
+push this 7
+call Soldier.rx 1
+push constant 239
+lt
+if-goto IF_TRUE30
+goto IF_FALSE30
+label IF_TRUE30
+push this 7
+push constant 1
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END30
+label IF_FALSE30
+push this 7
+call Soldier.rx 1
+push constant 246
+gt
+if-goto IF_TRUE31
+goto IF_FALSE31
+label IF_TRUE31
+push this 7
+push constant 1
+neg
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END31
+label IF_FALSE31
+push this 7
+call Soldier.drawSoldier 1
+pop temp 0
+label IF_END31
+label IF_END30
+label IF_END29
+label IF_FALSE28
+push this 8
+call Soldier.rhealth 1
+push constant 0
+gt
+if-goto IF_TRUE32
+goto IF_FALSE32
+label IF_TRUE32
+push this 8
+call Soldier.ry 1
+push constant 115
+gt
+if-goto IF_TRUE33
+goto IF_FALSE33
+label IF_TRUE33
+push this 8
+call Soldier.drawSoldier 1
+pop temp 0
+goto IF_END33
+label IF_FALSE33
+push this 8
+call Soldier.rx 1
+push constant 239
+lt
+if-goto IF_TRUE34
+goto IF_FALSE34
+label IF_TRUE34
+push this 8
+push constant 1
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END34
+label IF_FALSE34
+push this 8
+call Soldier.rx 1
+push constant 246
+gt
+if-goto IF_TRUE35
+goto IF_FALSE35
+label IF_TRUE35
+push this 8
+push constant 1
+neg
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END35
+label IF_FALSE35
+push this 8
+call Soldier.drawSoldier 1
+pop temp 0
+label IF_END35
+label IF_END34
+label IF_END33
+label IF_FALSE32
+push this 9
+call Soldier.rhealth 1
+push constant 0
+gt
+if-goto IF_TRUE36
+goto IF_FALSE36
+label IF_TRUE36
+push this 9
+call Soldier.ry 1
+push constant 115
+gt
+if-goto IF_TRUE37
+goto IF_FALSE37
+label IF_TRUE37
+push this 9
+call Soldier.drawSoldier 1
+pop temp 0
+goto IF_END37
+label IF_FALSE37
+push this 9
+call Soldier.rx 1
+push constant 239
+lt
+if-goto IF_TRUE38
+goto IF_FALSE38
+label IF_TRUE38
+push this 9
+push constant 1
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END38
+label IF_FALSE38
+push this 9
+call Soldier.rx 1
+push constant 246
+gt
+if-goto IF_TRUE39
+goto IF_FALSE39
+label IF_TRUE39
+push this 9
+push constant 1
+neg
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END39
+label IF_FALSE39
+push this 9
+call Soldier.drawSoldier 1
+pop temp 0
+label IF_END39
+label IF_END38
+label IF_END37
+label IF_FALSE36
+push this 10
+call Soldier.rhealth 1
+push constant 0
+gt
+if-goto IF_TRUE40
+goto IF_FALSE40
+label IF_TRUE40
+push this 10
+call Soldier.ry 1
+push constant 115
+gt
+if-goto IF_TRUE41
+goto IF_FALSE41
+label IF_TRUE41
+push this 10
+call Soldier.drawSoldier 1
+pop temp 0
+goto IF_END41
+label IF_FALSE41
+push this 10
+call Soldier.rx 1
+push constant 239
+lt
+if-goto IF_TRUE42
+goto IF_FALSE42
+label IF_TRUE42
+push this 10
+push constant 1
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END42
+label IF_FALSE42
+push this 10
+call Soldier.rx 1
+push constant 246
+gt
+if-goto IF_TRUE43
+goto IF_FALSE43
+label IF_TRUE43
+push this 10
+push constant 1
+neg
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END43
+label IF_FALSE43
+push this 10
+call Soldier.drawSoldier 1
+pop temp 0
+label IF_END43
+label IF_END42
+label IF_END41
+label IF_FALSE40
+push this 11
+call Soldier.rhealth 1
+push constant 0
+gt
+if-goto IF_TRUE44
+goto IF_FALSE44
+label IF_TRUE44
+push this 11
+call Soldier.ry 1
+push constant 115
+gt
+if-goto IF_TRUE45
+goto IF_FALSE45
+label IF_TRUE45
+push this 11
+call Soldier.drawSoldier 1
+pop temp 0
+goto IF_END45
+label IF_FALSE45
+push this 11
+call Soldier.rx 1
+push constant 239
+lt
+if-goto IF_TRUE46
+goto IF_FALSE46
+label IF_TRUE46
+push this 11
+push constant 1
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END46
+label IF_FALSE46
+push this 11
+call Soldier.rx 1
+push constant 246
+gt
+if-goto IF_TRUE47
+goto IF_FALSE47
+label IF_TRUE47
+push this 11
+push constant 1
+neg
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END47
+label IF_FALSE47
+push this 11
+call Soldier.drawSoldier 1
+pop temp 0
+label IF_END47
+label IF_END46
+label IF_END45
+label IF_FALSE44
+push this 12
+call Soldier.rhealth 1
+push constant 0
+gt
+if-goto IF_TRUE48
+goto IF_FALSE48
+label IF_TRUE48
+push this 12
+call Soldier.ry 1
+push constant 115
+gt
+if-goto IF_TRUE49
+goto IF_FALSE49
+label IF_TRUE49
+push this 12
+call Soldier.drawSoldier 1
+pop temp 0
+goto IF_END49
+label IF_FALSE49
+push this 12
+call Soldier.rx 1
+push constant 239
+lt
+if-goto IF_TRUE50
+goto IF_FALSE50
+label IF_TRUE50
+push this 12
+push constant 1
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END50
+label IF_FALSE50
+push this 12
+call Soldier.rx 1
+push constant 246
+gt
+if-goto IF_TRUE51
+goto IF_FALSE51
+label IF_TRUE51
+push this 12
+push constant 1
+neg
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END51
+label IF_FALSE51
+push this 12
+call Soldier.drawSoldier 1
+pop temp 0
+label IF_END51
+label IF_END50
+label IF_END49
+label IF_FALSE48
+push this 13
+call Soldier.rhealth 1
+push constant 0
+gt
+if-goto IF_TRUE52
+goto IF_FALSE52
+label IF_TRUE52
+push this 13
+call Soldier.ry 1
+push constant 115
+gt
+if-goto IF_TRUE53
+goto IF_FALSE53
+label IF_TRUE53
+push this 13
+call Soldier.drawSoldier 1
+pop temp 0
+goto IF_END53
+label IF_FALSE53
+push this 13
+call Soldier.rx 1
+push constant 239
+lt
+if-goto IF_TRUE54
+goto IF_FALSE54
+label IF_TRUE54
+push this 13
+push constant 1
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END54
+label IF_FALSE54
+push this 13
+call Soldier.rx 1
+push constant 246
+gt
+if-goto IF_TRUE55
+goto IF_FALSE55
+label IF_TRUE55
+push this 13
+push constant 1
+neg
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END55
+label IF_FALSE55
+push this 13
+call Soldier.drawSoldier 1
+pop temp 0
+label IF_END55
+label IF_END54
+label IF_END53
+label IF_FALSE52
+push this 14
+call Soldier.rhealth 1
+push constant 0
+gt
+if-goto IF_TRUE56
+goto IF_FALSE56
+label IF_TRUE56
+push this 14
+call Soldier.ry 1
+push constant 115
+gt
+if-goto IF_TRUE57
+goto IF_FALSE57
+label IF_TRUE57
+push this 14
+call Soldier.drawSoldier 1
+pop temp 0
+goto IF_END57
+label IF_FALSE57
+push this 14
+call Soldier.rx 1
+push constant 239
+lt
+if-goto IF_TRUE58
+goto IF_FALSE58
+label IF_TRUE58
+push this 14
+push constant 1
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END58
+label IF_FALSE58
+push this 14
+call Soldier.rx 1
+push constant 246
+gt
+if-goto IF_TRUE59
+goto IF_FALSE59
+label IF_TRUE59
+push this 14
+push constant 1
+neg
+call Soldier.drawSide 2
+pop temp 0
+goto IF_END59
+label IF_FALSE59
+push this 14
+call Soldier.drawSoldier 1
+pop temp 0
+label IF_END59
+label IF_END58
+label IF_END57
+label IF_FALSE56
+push constant 0
+return
+function Troop.readAndWait 1
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+label WHILE_EXP0
+push local 0
+push constant 40
+lt
+not
+if-goto WHILE_END0
+push this 15
+push constant 0
+call Control.read 2
+pop temp 0
+push constant 4
+call Sys.wait 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
+function Troop.walk 2
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+push constant 0
+pop local 1
+push argument 1
+push pointer 0
+call Buildings.canAttack 2
+push constant 0
+gt
+not
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push pointer 0
+call Troop.readAndWait 1
+pop temp 0
+push pointer 0
+call Troop.readAndWait 1
+pop temp 0
+push pointer 0
+call Troop.readAndWait 1
+pop temp 0
+push pointer 0
+call Troop.readAndWait 1
+pop temp 0
+label IF_FALSE0
+push argument 1
+push pointer 0
+call Buildings.canAttack 2
+push constant 0
+gt
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push argument 1
+call Buildings.shoot 1
+pop temp 0
+push argument 1
+push pointer 0
+call Buildings.attack 2
+pop local 0
+label IF_FALSE1
+label WHILE_EXP0
+push local 1
+push local 0
+lt
+not
+if-goto WHILE_END0
+push argument 2
+call Money.killSoldier 1
+pop temp 0
+push local 1
+push constant 1
+add
+pop local 1
+goto WHILE_EXP0
+label WHILE_END0
+push argument 2
+call Money.printMoney 1
+pop temp 0
+push pointer 0
+call Troop.clearRoad 1
+pop temp 0
+push this 0
+call Soldier.walk2 1
+pop temp 0
+push this 1
+call Soldier.walk2 1
+pop temp 0
+push this 2
+call Soldier.walk2 1
+pop temp 0
+push this 3
+call Soldier.walk2 1
+pop temp 0
+push this 4
+call Soldier.walk2 1
+pop temp 0
+push this 5
+call Soldier.walk2 1
+pop temp 0
+push this 6
+call Soldier.walk2 1
+pop temp 0
+push this 7
+call Soldier.walk2 1
+pop temp 0
+push this 8
+call Soldier.walk2 1
+pop temp 0
+push this 9
+call Soldier.walk2 1
+pop temp 0
+push this 10
+call Soldier.walk2 1
+pop temp 0
+push this 11
+call Soldier.walk2 1
+pop temp 0
+push this 12
+call Soldier.walk2 1
+pop temp 0
+push this 13
+call Soldier.walk2 1
+pop temp 0
+push this 14
+call Soldier.walk2 1
+pop temp 0
+push pointer 0
+call Troop.readAndWait 1
+pop temp 0
+push pointer 0
+call Troop.clearRoad 1
+pop temp 0
+push this 0
+push argument 3
+call Soldier.walk3 2
+pop temp 0
+push this 1
+push argument 3
+call Soldier.walk3 2
+pop temp 0
+push this 2
+push argument 3
+call Soldier.walk3 2
+pop temp 0
+push this 3
+push argument 3
+call Soldier.walk3 2
+pop temp 0
+push this 4
+push argument 3
+call Soldier.walk3 2
+pop temp 0
+push this 5
+push argument 3
+call Soldier.walk3 2
+pop temp 0
+push this 6
+push argument 3
+call Soldier.walk3 2
+pop temp 0
+push this 7
+push argument 3
+call Soldier.walk3 2
+pop temp 0
+push this 8
+push argument 3
+call Soldier.walk3 2
+pop temp 0
+push this 9
+push argument 3
+call Soldier.walk3 2
+pop temp 0
+push this 10
+push argument 3
+call Soldier.walk3 2
+pop temp 0
+push this 11
+push argument 3
+call Soldier.walk3 2
+pop temp 0
+push this 12
+push argument 3
+call Soldier.walk3 2
+pop temp 0
+push this 13
+push argument 3
+call Soldier.walk3 2
+pop temp 0
+push this 14
+push argument 3
+call Soldier.walk3 2
+pop temp 0
+push pointer 0
+call Troop.readAndWait 1
+pop temp 0
+push pointer 0
+call Troop.clearRoad 1
+pop temp 0
+push this 0
+call Soldier.walk4 1
+pop temp 0
+push this 1
+call Soldier.walk4 1
+pop temp 0
+push this 2
+call Soldier.walk4 1
+pop temp 0
+push this 3
+call Soldier.walk4 1
+pop temp 0
+push this 4
+call Soldier.walk4 1
+pop temp 0
+push this 5
+call Soldier.walk4 1
+pop temp 0
+push this 6
+call Soldier.walk4 1
+pop temp 0
+push this 7
+call Soldier.walk4 1
+pop temp 0
+push this 8
+call Soldier.walk4 1
+pop temp 0
+push this 9
+call Soldier.walk4 1
+pop temp 0
+push this 10
+call Soldier.walk4 1
+pop temp 0
+push this 11
+call Soldier.walk4 1
+pop temp 0
+push this 12
+call Soldier.walk4 1
+pop temp 0
+push this 13
+call Soldier.walk4 1
+pop temp 0
+push this 14
+call Soldier.walk4 1
+pop temp 0
+push pointer 0
+call Troop.readAndWait 1
+pop temp 0
+push pointer 0
+call Troop.clearRoad 1
+pop temp 0
+push this 0
+call Soldier.walk5 1
+pop temp 0
+push this 1
+call Soldier.walk5 1
+pop temp 0
+push this 2
+call Soldier.walk5 1
+pop temp 0
+push this 3
+call Soldier.walk5 1
+pop temp 0
+push this 4
+call Soldier.walk5 1
+pop temp 0
+push this 5
+call Soldier.walk5 1
+pop temp 0
+push this 6
+call Soldier.walk5 1
+pop temp 0
+push this 7
+call Soldier.walk5 1
+pop temp 0
+push this 8
+call Soldier.walk5 1
+pop temp 0
+push this 9
+call Soldier.walk5 1
+pop temp 0
+push this 10
+call Soldier.walk5 1
+pop temp 0
+push this 11
+call Soldier.walk5 1
+pop temp 0
+push this 12
+call Soldier.walk5 1
+pop temp 0
+push this 13
+call Soldier.walk5 1
+pop temp 0
+push this 14
+call Soldier.walk5 1
+pop temp 0
+push local 0
+return

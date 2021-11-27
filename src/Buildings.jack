@@ -1,0 +1,319 @@
+class Buildings
+{
+	field Tower tower1;
+	field Tower tower2;
+	field Tower tower3;
+	field Tower tower4;
+	field Tower tower5;
+	field Tower tower6;
+	field Tower tower7;
+	field Tower tower8;
+	field Bullet bullet1;
+	field Bullet bullet2;
+	field Bullet bullet3;
+	field Bullet bullet4;
+	field Bullet bullet5;
+	field Bullet bullet6;
+	field Bullet bullet7;
+	field Bullet bullet8;
+	field Control control;
+	field Money money;
+	field Troop troop;
+	field Map map;
+
+	constructor Buildings new(Money money1,Troop tin,Control cin)
+	{
+		let tower1 = Tower.new(1);
+		let tower2 = Tower.new(2);
+		let tower3 = Tower.new(3);
+		let tower4 = Tower.new(4);
+		let tower5 = Tower.new(5);
+		let tower6 = Tower.new(6);
+		let tower7 = Tower.new(7);
+		let tower8 = Tower.new(8);
+		let bullet1 = Bullet.new(152,213);
+		let bullet2 = Bullet.new(184,158);
+		let bullet3 = Bullet.new(216,213);
+		let bullet4 = Bullet.new(216,70);
+		let bullet5 = Bullet.new(304,213);
+		let bullet6 = Bullet.new(304,70);
+		let bullet7 = Bullet.new(328,158);
+		let bullet8 = Bullet.new(360,213);
+		let money = money1;
+		let control = cin;
+		let troop = tin;
+		return this;
+	}
+
+	method void initial()
+	{
+		do tower1.initial();
+		do tower2.initial();
+		do tower3.initial();
+		do tower4.initial();
+		do tower5.initial();
+		do tower6.initial();
+		do tower7.initial();
+		do tower8.initial();
+		return;
+	}
+
+	method void shoot()
+	{
+		var int target, continue;
+		var int x1, y1, shoot1;
+		var int x2, y2, shoot2;
+		var int x3, y3, shoot3;
+		var int x4, y4, shoot4;
+		var int x5, y5, shoot5;
+		var int x6, y6, shoot6;
+		var int x7, y7, shoot7;
+		var int x8, y8, shoot8;
+		let shoot1 = 0;
+		let shoot2 = 0;
+		let shoot3 = 0;
+		let shoot4 = 0;
+		let shoot5 = 0;
+		let shoot6 = 0;
+		let shoot7 = 0;
+		let shoot8 = 0;
+		let continue=1;
+
+		let target = tower1.canAttack(troop);
+		if(target>0)
+		{
+			let x1 = troop.rx(target)+15;
+			let y1 = troop.ry(target)+4;
+			let shoot1 = 1;
+		}
+		let target = tower2.canAttack(troop);
+		if(target>0)
+		{
+			let x2 = troop.rx(target)+15;
+			let y2 = troop.ry(target)+4;
+			let shoot2 = 1;
+		}
+		let target = tower3.canAttack(troop);
+		if(target>0)
+		{
+			let x3 = troop.rx(target)+15;
+			let y3 = troop.ry(target)+4;
+			let shoot3 = 1;
+		}
+		let target = tower4.canAttack(troop);
+		if(target>0)
+		{
+			let x4 = troop.rx(target)+15;
+			let y4 = troop.ry(target)+4;
+			let shoot4 = 1;
+		}
+		let target = tower5.canAttack(troop);
+		if(target>0)
+		{
+			let x5 = troop.rx(target)+15;
+			let y5 = troop.ry(target)+4;
+			let shoot5 = 1;
+		}
+		let target = tower6.canAttack(troop);
+		if(target>0)
+		{
+			let x6 = troop.rx(target)+15;
+			let y6 = troop.ry(target)+4;
+			let shoot6 = 1;
+		}
+		let target = tower7.canAttack(troop);
+		if(target>0)
+		{
+			let x7 = troop.rx(target)+15;
+			let y7 = troop.ry(target)+4;
+			let shoot7 = 1;
+		}
+		let target = tower8.canAttack(troop);
+		if(target>0)
+		{
+			let x8 = troop.rx(target)+15;
+			let y8 = troop.ry(target)+4;
+			let shoot8 = 1;
+		}
+		do bullet1.determine(x1,y1,shoot1);
+		do bullet2.determine(x2,y2,shoot2);
+		do bullet3.determine(x3,y3,shoot3);
+		do bullet4.determine(x4,y4,shoot4);
+		do bullet5.determine(x5,y5,shoot5);
+		do bullet6.determine(x6,y6,shoot6);
+		do bullet7.determine(x7,y7,shoot7);
+		do bullet8.determine(x8,y8,shoot8);
+		while(continue>0)
+		{
+			let continue = bullet1.shoot(shoot1);
+			let continue = continue + bullet2.shoot(shoot2);
+			let continue = continue + bullet3.shoot(shoot3);
+			let continue = continue + bullet4.shoot(shoot4);
+			let continue = continue + bullet5.shoot(shoot5);
+			let continue = continue + bullet6.shoot(shoot6);
+			let continue = continue + bullet7.shoot(shoot7);
+			let continue = continue + bullet8.shoot(shoot8);
+			do map.drawAllBase();
+			do map.drawRoad();
+			do troop.drawAllSoldier();
+			do tower1.drawTower();
+			do tower2.drawTower();
+			do tower3.drawTower();
+			do tower4.drawTower();
+			do tower5.drawTower();
+			do tower6.drawTower();
+			do tower7.drawTower();
+			do tower8.drawTower();
+			do control.read(0);
+			do Sys.wait(1);
+			do control.read(0);
+			do Sys.wait(1);
+		}
+		do troop.clearRoad();
+		do troop.drawAllSoldier();
+		return;
+	}
+
+	method void build(int select)
+	{
+		if(select=1)
+		{
+			if( money.buy(tower1.cost())=1 )
+			{
+				do tower1.buildTower(1);
+				return;
+			}
+		}
+		if(select=2)
+		{
+			if( money.buy(tower2.cost())=1 )
+			{
+				do tower2.buildTower(1);
+				return;
+			}
+		}
+		if(select=3)
+		{
+			if( money.buy(tower3.cost())=1 )
+			{
+				do tower3.buildTower(1);
+				return;
+			}
+		}
+		if(select=4)
+		{
+			if( money.buy(tower4.cost())=1 )
+			{
+				do tower4.buildTower(1);
+				return;
+			}
+		}
+		if(select=5)
+		{
+			if( money.buy(tower5.cost())=1 )
+			{
+				do tower5.buildTower(1);
+				return;
+			}
+		}
+		if(select=6)
+		{
+			if( money.buy(tower6.cost())=1 )
+			{
+				do tower6.buildTower(1);
+				return;
+			}
+		}
+		if(select=7)
+		{
+			if( money.buy(tower7.cost())=1 )
+			{
+				do tower7.buildTower(1);
+				return;
+			}
+		}
+		if(select=8)
+		{
+			if( money.buy(tower8.cost())=1 )
+			{
+				do tower8.buildTower(1);
+				return;
+			}
+		}
+		return;
+	}
+
+	method int attack(Troop troop)
+	{
+		var int dead;
+		let dead = tower1.attack(troop);
+		let dead =  dead + tower2.attack(troop);
+		let dead =  dead + tower3.attack(troop);
+		let dead =  dead + tower4.attack(troop);
+		let dead =  dead + tower5.attack(troop);
+		let dead =  dead + tower6.attack(troop);
+		let dead =  dead + tower7.attack(troop);
+		let dead =  dead + tower8.attack(troop);
+		return dead;
+	}
+
+	method int canAttack(Troop troop)
+	{
+		var int count;
+		let count = tower1.canAttack(troop);
+		let count = count + tower2.canAttack(troop);
+		let count = count + tower3.canAttack(troop);
+		let count = count + tower4.canAttack(troop);
+		let count = count + tower5.canAttack(troop);
+		let count = count + tower6.canAttack(troop);
+		let count = count + tower7.canAttack(troop);
+		let count = count + tower8.canAttack(troop);
+
+		return count;
+	}
+
+	method void printStatus(int select)
+	{
+		if(select=1)
+		{
+			do tower1.printStatus(1);
+			return;
+		}
+		if(select=2)
+		{
+			do tower2.printStatus(2);
+			return;
+		}
+		if(select=3)
+		{
+			do tower3.printStatus(3);
+			return;
+		}
+		if(select=4)
+		{
+			do tower4.printStatus(4);
+			return;
+		}
+		if(select=5)
+		{
+			do tower5.printStatus(5);
+			return;
+		}
+		if(select=6)
+		{
+			do tower6.printStatus(6);
+			return;
+		}
+		if(select=7)
+		{
+			do tower7.printStatus(7);
+			return;
+		}
+		if(select=8)
+		{
+			do tower8.printStatus(8);
+			return;
+		}
+		return;
+	}
+}

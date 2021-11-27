@@ -1,0 +1,499 @@
+class Tower
+{
+	field int x, y;
+	field int type;
+	field int level, towerDamage;
+
+	constructor Tower new(int location)
+	{
+		let type = 0;
+		let level = 0;
+		let towerDamage = 0;
+		if(location=1)
+		{
+			let x=137;
+			let y=206;
+		}
+		if(location=2)
+		{
+			let x=169;
+			let y=151;
+		}
+		if(location=3)
+		{
+			let x=201;
+			let y=206;
+		}
+		if(location=4)
+		{
+			let x=201;
+			let y=63;
+		}
+		if(location=5)
+		{
+			let x=289;
+			let y=206;
+		}
+		if(location=6)
+		{
+			let x=289;
+			let y=63;
+		}
+		if(location=7)
+		{
+			let x=313;
+			let y=151;
+		}
+		if(location=8)
+		{
+			let x=345;
+			let y=206;
+		}
+		return this;
+	}
+
+	method void printStatus(int location)
+	{
+		do Output.moveCursor(0,50);
+		do Output.printChar(76);
+		do Output.printChar(111);
+		do Output.printChar(99);
+		do Output.printChar(97);
+		do Output.printChar(116);
+		do Output.printChar(105);
+		do Output.printChar(111);
+		do Output.printChar(110);
+		do Output.printChar(58);
+		do Output.printChar(32);
+		do Output.printInt(location);
+		do Output.moveCursor(1,50);
+		do Output.printChar(67);
+		do Output.printChar(111);
+		do Output.printChar(115);
+		do Output.printChar(116);
+		do Output.printChar(58);
+		do Output.printChar(32);
+		do Output.printInt(cost());
+		do Output.moveCursor(2,50);
+		do Output.printChar(76);
+		do Output.printChar(101);
+		do Output.printChar(118);
+		do Output.printChar(101);
+		do Output.printChar(108);
+		do Output.printChar(58);
+		do Output.printChar(32);
+		do Output.printInt(level);
+		do Output.moveCursor(3,50);
+		do Output.printChar(84);
+		do Output.printChar(121);
+		do Output.printChar(112);
+		do Output.printChar(101);
+		do Output.printChar(58);
+		do Output.printChar(32);
+		if(level=0)
+		{
+			do Output.printChar(78);
+			do Output.printChar(111);
+			do Output.printChar(110);
+			do Output.printChar(101);
+			do Output.printChar(32);
+			do Output.printChar(32);
+		}
+		if(type=1)
+		{
+			do Output.printChar(67);
+			do Output.printChar(97);
+			do Output.printChar(110);
+			do Output.printChar(110);
+			do Output.printChar(111);
+			do Output.printChar(110);
+		}
+		do Output.moveCursor(4,50);
+		do Output.printChar(80);
+		do Output.printChar(114);
+		do Output.printChar(101);
+		do Output.printChar(115);
+		do Output.printChar(115);
+		do Output.printChar(32);
+		do Output.printChar(66);
+		do Output.printChar(32);
+		do Output.printChar(116);
+		do Output.printChar(111);
+		do Output.printChar(32);
+		do Output.printChar(98);
+		do Output.printChar(117);
+		do Output.printChar(121);
+		
+		return;
+	}
+
+	method void initial()
+	{
+		let type = 0;
+		let level = 0;
+		let towerDamage = 0;
+		return;
+	}
+
+	method int cost()
+	{
+		return Math.multiply(150,level+1)-50;
+	}
+
+	method void buildTower(int type0)
+	{
+		let type = type0;
+		let level = level + 1;
+		let towerDamage = 20 + Math.multiply(10,level);
+		do drawTower();
+		return;
+	}
+
+	method void drawTower()
+	{
+		if(level>0)
+		{
+			do drawTower1();
+		}
+		return;
+	}
+
+	method int attack(Troop troop)
+	{
+		var int distance;
+		if(level=0)
+		{
+			return 0;
+		}
+                let distance = Math.multiply(Math.divide(troop.rx(2)-x,10),Math.divide(troop.rx(2)-x,10))+Math.multiply(Math.divide(troop.ry(2)-y,10),Math.divide(troop.ry(2)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return troop.damage(2,towerDamage);
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(5)-x,10),Math.divide(troop.rx(5)-x,10))+Math.multiply(Math.divide(troop.ry(5)-y,10),Math.divide(troop.ry(5)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return troop.damage(5,towerDamage);
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(8)-x,10),Math.divide(troop.rx(8)-x,10))+Math.multiply(Math.divide(troop.ry(8)-y,10),Math.divide(troop.ry(8)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return troop.damage(8,towerDamage);
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(11)-x,10),Math.divide(troop.rx(11)-x,10))+Math.multiply(Math.divide(troop.ry(11)-y,10),Math.divide(troop.ry(11)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return troop.damage(11,towerDamage);
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(14)-x,10),Math.divide(troop.rx(14)-x,10))+Math.multiply(Math.divide(troop.ry(14)-y,10),Math.divide(troop.ry(14)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return troop.damage(14,towerDamage);
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(1)-x,10),Math.divide(troop.rx(1)-x,10))+Math.multiply(Math.divide(troop.ry(1)-y,10),Math.divide(troop.ry(1)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return troop.damage(1,towerDamage);
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(3)-x,10),Math.divide(troop.rx(3)-x,10))+Math.multiply(Math.divide(troop.ry(3)-y,10),Math.divide(troop.ry(3)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return troop.damage(3,towerDamage);
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(4)-x,10),Math.divide(troop.rx(4)-x,10))+Math.multiply(Math.divide(troop.ry(4)-y,10),Math.divide(troop.ry(4)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return troop.damage(4,towerDamage);
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(6)-x,10),Math.divide(troop.rx(6)-x,10))+Math.multiply(Math.divide(troop.ry(6)-y,10),Math.divide(troop.ry(6)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return troop.damage(6,towerDamage);
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(7)-x,10),Math.divide(troop.rx(7)-x,10))+Math.multiply(Math.divide(troop.ry(7)-y,10),Math.divide(troop.ry(7)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return troop.damage(7,towerDamage);
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(9)-x,10),Math.divide(troop.rx(9)-x,10))+Math.multiply(Math.divide(troop.ry(9)-y,10),Math.divide(troop.ry(9)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return troop.damage(9,towerDamage);
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(10)-x,10),Math.divide(troop.rx(10)-x,10))+Math.multiply(Math.divide(troop.ry(10)-y,10),Math.divide(troop.ry(10)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return troop.damage(10,towerDamage);
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(12)-x,10),Math.divide(troop.rx(12)-x,10))+Math.multiply(Math.divide(troop.ry(12)-y,10),Math.divide(troop.ry(12)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return troop.damage(12,towerDamage);
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(13)-x,10),Math.divide(troop.rx(13)-x,10))+Math.multiply(Math.divide(troop.ry(13)-y,10),Math.divide(troop.ry(13)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return troop.damage(13,towerDamage);
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(15)-x,10),Math.divide(troop.rx(15)-x,10))+Math.multiply(Math.divide(troop.ry(15)-y,10),Math.divide(troop.ry(15)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return troop.damage(15,towerDamage);
+                }
+		
+		return 0;
+	}
+
+	method int canAttack(Troop troop)
+	{
+		var int distance;
+		if(level=0)
+		{
+			return 0;
+		}
+                let distance = Math.multiply(Math.divide(troop.rx(2)-x,10),Math.divide(troop.rx(2)-x,10))+Math.multiply(Math.divide(troop.ry(2)-y,10),Math.divide(troop.ry(2)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return 2;
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(5)-x,10),Math.divide(troop.rx(5)-x,10))+Math.multiply(Math.divide(troop.ry(5)-y,10),Math.divide(troop.ry(5)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return 5;
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(8)-x,10),Math.divide(troop.rx(8)-x,10))+Math.multiply(Math.divide(troop.ry(8)-y,10),Math.divide(troop.ry(8)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return 8;
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(11)-x,10),Math.divide(troop.rx(11)-x,10))+Math.multiply(Math.divide(troop.ry(11)-y,10),Math.divide(troop.ry(11)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return 11;
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(14)-x,10),Math.divide(troop.rx(14)-x,10))+Math.multiply(Math.divide(troop.ry(14)-y,10),Math.divide(troop.ry(14)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return 14;
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(1)-x,10),Math.divide(troop.rx(1)-x,10))+Math.multiply(Math.divide(troop.ry(1)-y,10),Math.divide(troop.ry(1)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return 1;
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(3)-x,10),Math.divide(troop.rx(3)-x,10))+Math.multiply(Math.divide(troop.ry(3)-y,10),Math.divide(troop.ry(3)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return 3;
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(4)-x,10),Math.divide(troop.rx(4)-x,10))+Math.multiply(Math.divide(troop.ry(4)-y,10),Math.divide(troop.ry(4)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return 4;
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(6)-x,10),Math.divide(troop.rx(6)-x,10))+Math.multiply(Math.divide(troop.ry(6)-y,10),Math.divide(troop.ry(6)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return 6;
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(7)-x,10),Math.divide(troop.rx(7)-x,10))+Math.multiply(Math.divide(troop.ry(7)-y,10),Math.divide(troop.ry(7)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return 7;
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(9)-x,10),Math.divide(troop.rx(9)-x,10))+Math.multiply(Math.divide(troop.ry(9)-y,10),Math.divide(troop.ry(9)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return 9;
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(10)-x,10),Math.divide(troop.rx(10)-x,10))+Math.multiply(Math.divide(troop.ry(10)-y,10),Math.divide(troop.ry(10)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return 10;
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(12)-x,10),Math.divide(troop.rx(12)-x,10))+Math.multiply(Math.divide(troop.ry(12)-y,10),Math.divide(troop.ry(12)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return 12;
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(13)-x,10),Math.divide(troop.rx(13)-x,10))+Math.multiply(Math.divide(troop.ry(13)-y,10),Math.divide(troop.ry(13)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return 13;
+                }
+                let distance = Math.multiply(Math.divide(troop.rx(15)-x,10),Math.divide(troop.rx(15)-x,10))+Math.multiply(Math.divide(troop.ry(15)-y,10),Math.divide(troop.ry(15)-y,10));
+                if( distance < 50 & distance > 0 )
+                {
+                        return 15;
+                }
+		
+		return 0;
+	}
+	method void drawTower1()
+	{
+		do Screen.setColor(true);
+                do Screen.drawPixel(x+11,y+23);
+                do Screen.drawPixel(x+12,y+23);
+                do Screen.drawPixel(x+13,y+23);
+                do Screen.drawPixel(x+14,y+23);
+                do Screen.drawPixel(x+15,y+23);
+                do Screen.drawPixel(x+16,y+23);
+                do Screen.drawPixel(x+17,y+23);
+                do Screen.drawPixel(x+8,y+22);
+                do Screen.drawPixel(x+9,y+22);
+                do Screen.drawPixel(x+10,y+22);
+                do Screen.drawPixel(x+12,y+22);
+                do Screen.drawPixel(x+16,y+22);
+                do Screen.drawPixel(x+18,y+22);
+                do Screen.drawPixel(x+19,y+22);
+                do Screen.drawPixel(x+20,y+22);
+                do Screen.drawPixel(x+6,y+21);
+                do Screen.drawPixel(x+7,y+21);
+                do Screen.drawPixel(x+8,y+21);
+                do Screen.drawPixel(x+12,y+21);
+                do Screen.drawPixel(x+16,y+21);
+                do Screen.drawPixel(x+20,y+21);
+                do Screen.drawPixel(x+21,y+21);
+                do Screen.drawPixel(x+22,y+21);
+                do Screen.drawPixel(x+4,y+20);
+                do Screen.drawPixel(x+5,y+20);
+                do Screen.drawPixel(x+8,y+20);
+                do Screen.drawPixel(x+11,y+20);
+                do Screen.drawPixel(x+12,y+20);
+                do Screen.drawPixel(x+13,y+20);
+                do Screen.drawPixel(x+14,y+20);
+                do Screen.drawPixel(x+15,y+20);
+                do Screen.drawPixel(x+16,y+20);
+                do Screen.drawPixel(x+17,y+20);
+                do Screen.drawPixel(x+20,y+20);
+                do Screen.drawPixel(x+23,y+20);
+                do Screen.drawPixel(x+24,y+20);
+                do Screen.drawPixel(x+4,y+19);
+                do Screen.drawPixel(x+8,y+19);
+                do Screen.drawPixel(x+9,y+19);
+                do Screen.drawPixel(x+10,y+19);
+                do Screen.drawPixel(x+14,y+19);
+                do Screen.drawPixel(x+18,y+19);
+                do Screen.drawPixel(x+19,y+19);
+                do Screen.drawPixel(x+20,y+19);
+                do Screen.drawPixel(x+24,y+19);
+                do Screen.drawPixel(x+4,y+18);
+                do Screen.drawPixel(x+6,y+18);
+                do Screen.drawPixel(x+7,y+18);
+                do Screen.drawPixel(x+10,y+18);
+                do Screen.drawPixel(x+14,y+18);
+                do Screen.drawPixel(x+18,y+18);
+                do Screen.drawPixel(x+21,y+18);
+                do Screen.drawPixel(x+22,y+18);
+                do Screen.drawPixel(x+24,y+18);
+                do Screen.drawPixel(x+4,y+17);
+                do Screen.drawPixel(x+5,y+17);
+                do Screen.drawPixel(x+6,y+17);
+                do Screen.drawPixel(x+10,y+17);
+                do Screen.drawPixel(x+11,y+17);
+                do Screen.drawPixel(x+12,y+17);
+                do Screen.drawPixel(x+13,y+17);
+                do Screen.drawPixel(x+14,y+17);
+                do Screen.drawPixel(x+15,y+17);
+                do Screen.drawPixel(x+16,y+17);
+                do Screen.drawPixel(x+17,y+17);
+                do Screen.drawPixel(x+18,y+17);
+                do Screen.drawPixel(x+22,y+17);
+                do Screen.drawPixel(x+23,y+17);
+                do Screen.drawPixel(x+24,y+17);
+                do Screen.drawPixel(x+4,y+16);
+                do Screen.drawPixel(x+6,y+16);
+                do Screen.drawPixel(x+8,y+16);
+                do Screen.drawPixel(x+9,y+16);
+                do Screen.drawPixel(x+10,y+16);
+                do Screen.drawPixel(x+18,y+16);
+                do Screen.drawPixel(x+19,y+16);
+                do Screen.drawPixel(x+20,y+16);
+                do Screen.drawPixel(x+22,y+16);
+                do Screen.drawPixel(x+24,y+16);
+                do Screen.drawPixel(x+4,y+15);
+                do Screen.drawPixel(x+6,y+15);
+                do Screen.drawPixel(x+7,y+15);
+                do Screen.drawPixel(x+21,y+15);
+                do Screen.drawPixel(x+22,y+15);
+                do Screen.drawPixel(x+24,y+15);
+                do Screen.drawPixel(x+4,y+14);
+                do Screen.drawPixel(x+5,y+14);
+                do Screen.drawPixel(x+12,y+14);
+                do Screen.drawPixel(x+13,y+14);
+                do Screen.drawPixel(x+14,y+14);
+                do Screen.drawPixel(x+15,y+14);
+                do Screen.drawPixel(x+16,y+14);
+                do Screen.drawPixel(x+23,y+14);
+                do Screen.drawPixel(x+24,y+14);
+                do Screen.drawPixel(x+4,y+13);
+                do Screen.drawPixel(x+5,y+13);
+                do Screen.drawPixel(x+9,y+13);
+                do Screen.drawPixel(x+10,y+13);
+                do Screen.drawPixel(x+11,y+13);
+                do Screen.drawPixel(x+17,y+13);
+                do Screen.drawPixel(x+18,y+13);
+                do Screen.drawPixel(x+19,y+13);
+                do Screen.drawPixel(x+23,y+13);
+                do Screen.drawPixel(x+24,y+13);
+                do Screen.drawPixel(x+6,y+12);
+                do Screen.drawPixel(x+7,y+12);
+                do Screen.drawPixel(x+9,y+12);
+                do Screen.drawPixel(x+19,y+12);
+                do Screen.drawPixel(x+21,y+12);
+                do Screen.drawPixel(x+22,y+12);
+                do Screen.drawPixel(x+8,y+11);
+                do Screen.drawPixel(x+9,y+11);
+                do Screen.drawPixel(x+19,y+11);
+                do Screen.drawPixel(x+20,y+11);
+                do Screen.drawPixel(x+9,y+10);
+                do Screen.drawPixel(x+19,y+10);
+                do Screen.drawPixel(x+9,y+9);
+                do Screen.drawPixel(x+13,y+9);
+                do Screen.drawPixel(x+14,y+9);
+                do Screen.drawPixel(x+15,y+9);
+                do Screen.drawPixel(x+19,y+9);
+                do Screen.drawPixel(x+9,y+8);
+                do Screen.drawPixel(x+10,y+8);
+                do Screen.drawPixel(x+13,y+8);
+                do Screen.drawPixel(x+15,y+8);
+                do Screen.drawPixel(x+18,y+8);
+                do Screen.drawPixel(x+19,y+8);
+                do Screen.drawPixel(x+9,y+7);
+                do Screen.drawPixel(x+10,y+7);
+                do Screen.drawPixel(x+13,y+7);
+                do Screen.drawPixel(x+14,y+7);
+                do Screen.drawPixel(x+15,y+7);
+                do Screen.drawPixel(x+18,y+7);
+                do Screen.drawPixel(x+19,y+7);
+                do Screen.drawPixel(x+9,y+6);
+                do Screen.drawPixel(x+10,y+6);
+                do Screen.drawPixel(x+18,y+6);
+                do Screen.drawPixel(x+19,y+6);
+                do Screen.drawPixel(x+9,y+5);
+                do Screen.drawPixel(x+13,y+5);
+                do Screen.drawPixel(x+14,y+5);
+                do Screen.drawPixel(x+15,y+5);
+                do Screen.drawPixel(x+19,y+5);
+                do Screen.drawPixel(x+9,y+4);
+                do Screen.drawPixel(x+10,y+4);
+                do Screen.drawPixel(x+11,y+4);
+                do Screen.drawPixel(x+12,y+4);
+                do Screen.drawPixel(x+13,y+4);
+                do Screen.drawPixel(x+15,y+4);
+                do Screen.drawPixel(x+16,y+4);
+                do Screen.drawPixel(x+17,y+4);
+                do Screen.drawPixel(x+18,y+4);
+                do Screen.drawPixel(x+19,y+4);
+                do Screen.drawPixel(x+9,y+3);
+                do Screen.drawPixel(x+10,y+3);
+                do Screen.drawPixel(x+12,y+3);
+                do Screen.drawPixel(x+13,y+3);
+                do Screen.drawPixel(x+14,y+3);
+                do Screen.drawPixel(x+15,y+3);
+                do Screen.drawPixel(x+16,y+3);
+                do Screen.drawPixel(x+18,y+3);
+                do Screen.drawPixel(x+19,y+3);
+		return;
+	}
+}

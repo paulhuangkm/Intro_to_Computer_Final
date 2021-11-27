@@ -1,0 +1,714 @@
+class Soldier
+{
+	field int health;
+	field int x, y, speed;
+	field int attack;
+	field int round;
+
+	constructor Soldier new(int round0,int status)
+	{
+		if(status=4)
+		{
+			let x=295;
+			let y=100;
+		}
+		if(status=0)
+		{
+			let health=0;
+			let x=0;
+			let y=0;
+		}
+		let speed=3;
+		return this;
+	}
+
+	method int addx(int add)
+	{
+		let x = x + add;
+		return x;
+	}
+
+	method int rx()
+	{
+		return x;
+	}
+
+	method int ry()
+	{
+		return y;
+	}
+
+	method int rhealth()
+	{
+		return health;
+	}
+
+	method int damage(int d)
+	{
+		if(~(health>0))
+		{
+			return 0;
+		}
+		let health = health - d;
+		if(health > 0)
+		{	
+			return 0;
+		}
+		else
+		{
+			do Screen.setColor(false);
+			do Screen.drawRectangle(x+3,y-4,x+27,y+25);
+			let x=0;
+			let y=0;
+			return 1;
+		}
+	}
+
+	method void reset(int round0,int status)
+	{
+		let round=round0;
+		let health = Math.multiply(Math.divide(round,5),100)+100;
+		let attack = (Math.multiply(Math.divide(round,5),5)+10);
+		if(round = 1)
+		{
+			let health = 50;
+		}
+		if(status=1)
+		{
+			let x=90;
+			let y=215;
+		}
+		if(status=2)
+		{
+			let x=240;
+			let y=215;
+		}
+		if(status=3)
+		{
+			let x=390;
+			let y=215;
+		}
+		if(status=4)
+		{
+			let x=295;
+			let y=100;
+		}
+		if(status=0)
+		{
+			let health=0;
+		}
+		let speed=3;
+		return;
+	}
+
+	method void clearBody()
+	{
+		do Screen.setColor(false);
+		do Screen.drawRectangle(x+9,y+5,x+21,y+22);
+		return;
+	}
+
+	method int walk2()
+	{
+		if( health>0 )
+		{
+			do clearBody();
+			if( y>115 )
+			{
+				do walkUp2();
+			}
+			else
+			{
+				if( x<239 )
+				{
+					do walkSide2(1);
+				}
+				else
+				{
+					if( x>246 )
+					{
+						do walkSide2(-1);
+					}
+					else
+					{
+						if(y>80)
+						{
+							do walkUp2();
+						}
+						else
+						{
+							do hit1();
+						}
+					}
+				}
+			}
+		}
+		return 0;
+	}
+	method int walk3(Health player)
+	{
+		if( health>0 )
+		{
+			do clearBody();
+			if( y>115 )
+			{
+				do walkUp3();
+			}
+			else
+			{
+				if( x<239 )
+				{
+					do walkSide3(1);
+				}
+				else
+				{
+					if( x>246 )
+					{
+						do walkSide3(-1);
+					}
+					else
+					{
+						if(y>80)
+						{
+							do walkUp3();
+						}
+						else
+						{
+							do player.decreaseHealth(attack);
+							do drawSoldier();
+						}
+					}
+				}
+			}
+		}
+		return 0;
+	}
+	method int walk4()
+	{
+		if( health>0 )
+		{
+			do clearBody();
+			if( y>115 )
+			{
+				do walkUp4();
+			}
+			else
+			{
+				if( x<239 )
+				{
+					do walkSide4(1);
+				}
+				else
+				{
+					if( x>246 )
+					{
+						do walkSide4(-1);
+					}
+					else
+					{
+						if(y>80)
+						{
+							do walkUp4();
+						}
+						else
+						{
+							do drawSoldier();
+						}
+					}
+				}
+			}
+		}
+		return 0;
+	}
+	method int walk5()
+	{
+		if( health>0 )
+		{
+			do clearBody();
+			if( y>115 )
+			{
+				do walkUp5();
+			}
+			else
+			{
+				if( x<239 )
+				{
+					do walkSide5(1);
+				}
+				else
+				{
+					if( x>246 )
+					{
+						do walkSide5(-1);
+					}
+					else
+					{
+						if(y>80)
+						{
+							do walkUp5();
+						}
+						else
+						{
+							do drawSoldier();
+						}
+					}
+				}
+			}
+		}
+		return 0;
+	}
+
+	method void hit1()
+	{
+		do Screen.setColor(true);
+		if(round > 1)
+		{
+			if(Math.divide(health,Math.multiply(Math.divide(round,5),10)+10)>0)
+			{
+				do Screen.drawRectangle(x+10,y-4,x+9+Math.divide(health,Math.multiply(Math.divide(round,5),10)+10),y-3);
+			}
+			else
+			{
+				do Screen.drawRectangle(x+10,y-4,x+10,y-3);
+			}
+		}
+		else
+		{
+			if(Math.divide(health,5)>0)
+			{
+				do Screen.drawRectangle(x+10,y-4,x+9+Math.divide(health,5),y-3);
+			}
+			else
+			{
+				do Screen.drawRectangle(x+10,y-4,x+10,y-3);
+			}
+		}
+		
+		do Screen.drawLine(x+11,y,x+18,y);
+		do Screen.drawRectangle(x+14,y+1,x+15,y+6);
+		do Screen.drawLine(x+11,y,x+11,y+3);
+		do Screen.drawLine(x+10,y+3,x+10,y+6);
+		do Screen.drawPixel(x+9,y+6);
+		do Screen.drawLine(x+18,y,x+18,y+3);
+		do Screen.drawLine(x+19,y+3,x+19,y+6);
+		do Screen.drawPixel(x+20,y+6);
+		do Screen.drawLine(x+9,y+7,x+19,y+7);
+		do Screen.drawLine(x+11,y+6,x+11,y+8);
+		do Screen.drawLine(x+18,y+6,x+18,y+8);
+		do Screen.drawPixel(x+12,y+8);
+		do Screen.drawPixel(x+17,y+8);
+		do Screen.drawRectangle(x+12,y+9,x+13,y+11);
+		do Screen.drawRectangle(x+16,y+9,x+17,y+11);
+		do Screen.drawLine(x+9,y+10,x+20,y+10);
+		do Screen.drawPixel(x+12,y+12);
+		do Screen.drawPixel(x+17,y+12);
+		do Screen.drawLine(x+9,y+11,x+9,y+19);
+		do Screen.drawLine(x+20,y+11,x+20,y+14);
+		do Screen.drawRectangle(x+19,y,x+20,y+10);
+		do Screen.drawPixel(x+19,y+14);
+		do Screen.drawLine(x+10,y+19,x+10,y+20);
+		do Screen.drawLine(x+11,y+12,x+11,y+23);
+		do Screen.drawLine(x+18,y+12,x+18,y+23);
+		do Screen.drawLine(x+12,y+18,x+17,y+18);
+		do Screen.drawLine(x+14,y+19,x+14,y+24);
+		do Screen.drawLine(x+15,y+19,x+15,y+24);
+		do Screen.drawRectangle(x+11,y+24,x+13,y+25);
+		do Screen.drawRectangle(x+16,y+24,x+18,y+25);
+		return;
+	}
+
+	method void walkUp2()
+	{
+		let y=y-speed;
+		do upRight();
+		return;
+	}
+	method void walkUp3()
+	{
+		do drawSoldier();
+		return;
+	}
+	method void walkUp4()
+	{
+		let y=y-speed;
+		do upLeft();
+		return;
+	}
+	method void walkUp5()
+	{
+		do drawSoldier();
+		return;
+	}
+
+	method void walkSide2(int direction)
+	{
+		let x=x+Math.multiply(speed,direction);
+		do Side_one(direction);
+		return;
+	}
+	method void walkSide3(int direction)
+	{
+		do drawSide(direction);
+		return;
+	}
+	method void walkSide4(int direction)
+	{
+		let x=x+Math.multiply(speed,direction);
+		do Side_two(direction);
+		return;
+	}
+	method void walkSide5(int direction)
+	{
+		do drawSide(direction);
+		return;
+	}
+
+	method void drawSide(int direction)
+	{
+		var int x1;
+		do Screen.setColor(true);
+		let x1=x+15;
+		if(round > 1)
+		{
+			if(Math.divide(health,Math.multiply(Math.divide(round,5),10)+10)>0)
+			{
+				do Screen.drawRectangle(x+10,y-4,x+9+Math.divide(health,Math.multiply(Math.divide(round,5),10)+10),y-3);
+			}
+			else
+			{
+				do Screen.drawRectangle(x+10,y-4,x+10,y-3);
+			}
+		}
+		else
+		{
+			if(Math.divide(health,5)>0)
+			{
+				do Screen.drawRectangle(x+10,y-4,x+9+Math.divide(health,5),y-3);
+			}
+			else
+			{
+				do Screen.drawRectangle(x+10,y-4,x+10,y-3);
+			}
+		}
+		do Screen.drawLine(x1-Math.multiply(2,direction),y,x1+Math.multiply(2,direction),y);
+		do Screen.drawPixel(x1-Math.multiply(3,direction),y+1);
+		do Screen.drawPixel(x1+Math.multiply(3,direction),y+1);
+		do Screen.drawLine(x1-Math.multiply(4,direction),y+2,x1-Math.multiply(4,direction),y+4);
+		do Screen.drawLine(x1+Math.multiply(4,direction),y+2,x1+Math.multiply(4,direction),y+4);
+		do Screen.drawLine(x1-Math.multiply(3,direction),y+4,x1+Math.multiply(3,direction),y+4);
+		do Screen.drawLine(x1-Math.multiply(3,direction),y+5,x1-Math.multiply(3,direction),y+7);
+		do Screen.drawLine(x1+Math.multiply(3,direction),y+5,x1+Math.multiply(3,direction),y+7);
+		do Screen.drawLine(x1-Math.multiply(2,direction),y+7,x1-Math.multiply(2,direction),y+8);
+		do Screen.drawLine(x1+Math.multiply(1,direction),y+8,x1+Math.multiply(2,direction),y+8);
+		do Screen.drawLine(x1-Math.multiply(3,direction),y+9,x1+Math.multiply(2,direction),y+9);
+		do Screen.drawLine(x1-Math.multiply(3,direction),y+10,x1-Math.multiply(3,direction),y+16);
+		do Screen.drawPixel(x1+Math.multiply(2,direction),y+10);
+		do Screen.drawLine(x1+Math.multiply(3,direction),y+10,x1+Math.multiply(3,direction),y+16);
+		do Screen.drawPixel(x1+Math.multiply(2,direction),y+16);
+		do Screen.drawPixel(x1-Math.multiply(2,direction),y+16);
+		do Screen.drawLine(x1+Math.multiply(1,direction),y+11,x1+Math.multiply(1,direction),y+17);
+		do Screen.drawLine(x1-Math.multiply(1,direction),y+11,x1-Math.multiply(1,direction),y+17);
+		do Screen.drawPixel(x1,y+17);
+		do Screen.drawLine(x1-Math.multiply(2,direction),y+17,x1-Math.multiply(2,direction),y+21);
+		do Screen.drawLine(x1+Math.multiply(2,direction),y+17,x1+Math.multiply(2,direction),y+21);
+		do Screen.drawLine(x1-Math.multiply(2,direction),y+22,x1+Math.multiply(2,direction),y+22);
+		do Screen.drawLine(x1-Math.multiply(2,direction),y+23,x1+Math.multiply(2,direction),y+23);
+		do Screen.drawLine(x1-Math.multiply(2,direction),y+24,x1+Math.multiply(2,direction),y+24);
+		do Screen.drawLine(x1+Math.multiply(3,direction),y+23,x1+Math.multiply(3,direction),y+24);
+		return;
+	}
+
+	method void Side_one(int direction)
+	{
+		var int x1;
+		do Screen.setColor(true);
+		let x1=x+15;
+		if(round > 1)
+		{
+			if(Math.divide(health,Math.multiply(Math.divide(round,5),10)+10)>0)
+			{
+				do Screen.drawRectangle(x+10,y-4,x+9+Math.divide(health,Math.multiply(Math.divide(round,5),10)+10),y-3);
+			}
+			else
+			{
+				do Screen.drawRectangle(x+10,y-4,x+10,y-3);
+			}
+		}
+		else
+		{
+			if(Math.divide(health,5)>0)
+			{
+				do Screen.drawRectangle(x+10,y-4,x+9+Math.divide(health,5),y-3);
+			}
+			else
+			{
+				do Screen.drawRectangle(x+10,y-4,x+10,y-3);
+			}
+		}
+		do Screen.drawLine(x1,y+11,x1+Math.multiply(7,direction),y+11);
+		do Screen.drawLine(x1+Math.multiply(3,direction),y+9,x1+Math.multiply(7,direction),y+9);
+		do Screen.drawLine(x1+Math.multiply(2,direction),y+20,x1+Math.multiply(4,direction),y+20);
+		do Screen.drawLine(x1+Math.multiply(5,direction),y+16,x1+Math.multiply(5,direction),y+20);
+		do Screen.drawLine(x1+Math.multiply(6,direction),y+16,x1+Math.multiply(6,direction),y+20);
+		do Screen.drawLine(x1+Math.multiply(7,direction),y+16,x1+Math.multiply(7,direction),y+20);
+		do Screen.drawLine(x1+Math.multiply(6,direction),y+15,x1+Math.multiply(7,direction),y+15);
+		do Screen.drawPixel(x1+Math.multiply(7,direction),y+10);
+		do Screen.drawLine(x1-Math.multiply(2,direction),y,x1+Math.multiply(2,direction),y);
+		do Screen.drawPixel(x1-Math.multiply(3,direction),y+1);
+		do Screen.drawPixel(x1+Math.multiply(3,direction),y+1);
+		do Screen.drawLine(x1-Math.multiply(4,direction),y+2,x1-Math.multiply(4,direction),y+4);
+		do Screen.drawLine(x1+Math.multiply(4,direction),y+2,x1+Math.multiply(4,direction),y+4);
+		do Screen.drawLine(x1-Math.multiply(3,direction),y+4,x1+Math.multiply(3,direction),y+4);
+		do Screen.drawLine(x1-Math.multiply(3,direction),y+5,x1-Math.multiply(3,direction),y+7);
+		do Screen.drawLine(x1+Math.multiply(3,direction),y+5,x1+Math.multiply(3,direction),y+7);
+		do Screen.drawLine(x1-Math.multiply(2,direction),y+7,x1-Math.multiply(2,direction),y+8);
+		do Screen.drawLine(x1+Math.multiply(1,direction),y+8,x1+Math.multiply(2,direction),y+8);
+		do Screen.drawLine(x1-Math.multiply(3,direction),y+9,x1+Math.multiply(2,direction),y+9);
+		do Screen.drawLine(x1-Math.multiply(3,direction),y+10,x1-Math.multiply(3,direction),y+16);
+		do Screen.drawLine(x1+Math.multiply(3,direction),y+11,x1+Math.multiply(3,direction),y+16);
+		do Screen.drawLine(x1-Math.multiply(2,direction),y+16,x1+Math.multiply(2,direction),y+16);
+		do Screen.drawPixel(x1+Math.multiply(4,direction),y+16);
+		do Screen.drawLine(x1-Math.multiply(2,direction),y+17,x1-Math.multiply(2,direction),y+21);
+		do Screen.drawLine(x1+Math.multiply(2,direction),y+17,x1+Math.multiply(2,direction),y+21);
+		do Screen.drawLine(x1-Math.multiply(2,direction),y+22,x1+Math.multiply(2,direction),y+22);
+		do Screen.drawLine(x1-Math.multiply(2,direction),y+23,x1+Math.multiply(2,direction),y+23);
+		do Screen.drawLine(x1-Math.multiply(2,direction),y+24,x1+Math.multiply(2,direction),y+24);
+		do Screen.drawLine(x1+Math.multiply(3,direction),y+23,x1+Math.multiply(3,direction),y+24);
+		return;
+	}
+
+	method void Side_two(int direction)
+	{
+		var int x1;
+		do Screen.setColor(true);
+		let x1=x+15;
+		if(round > 1)
+		{
+			if(Math.divide(health,Math.multiply(Math.divide(round,5),10)+10)>0)
+			{
+				do Screen.drawRectangle(x+10,y-4,x+9+Math.divide(health,Math.multiply(Math.divide(round,5),10)+10),y-3);
+			}
+			else
+			{
+				do Screen.drawRectangle(x+10,y-4,x+10,y-3);
+			}
+		}
+		else
+		{
+			if(Math.divide(health,5)>0)
+			{
+				do Screen.drawRectangle(x+10,y-4,x+9+Math.divide(health,5),y-3);
+			}
+			else
+			{
+				do Screen.drawRectangle(x+10,y-4,x+10,y-3);
+			}
+		}
+		do Screen.drawLine(x1+Math.multiply(3,direction),y+11,x1+Math.multiply(7,direction),y+11);
+		do Screen.drawLine(x1+Math.multiply(3,direction),y+9,x1+Math.multiply(7,direction),y+9);
+		do Screen.drawLine(x1-Math.multiply(2,direction),y+20,x1+Math.multiply(4,direction),y+20);
+		do Screen.drawLine(x1+Math.multiply(5,direction),y+16,x1+Math.multiply(5,direction),y+20);
+		do Screen.drawLine(x1+Math.multiply(6,direction),y+16,x1+Math.multiply(6,direction),y+20);
+		do Screen.drawLine(x1+Math.multiply(7,direction),y+16,x1+Math.multiply(7,direction),y+20);
+		do Screen.drawLine(x1+Math.multiply(6,direction),y+15,x1+Math.multiply(7,direction),y+15);
+		do Screen.drawPixel(x1+Math.multiply(7,direction),y+10);
+		do Screen.drawLine(x1-Math.multiply(2,direction),y,x1+Math.multiply(2,direction),y);
+		do Screen.drawPixel(x1-Math.multiply(3,direction),y+1);
+		do Screen.drawPixel(x1+Math.multiply(3,direction),y+1);
+		do Screen.drawLine(x1-Math.multiply(4,direction),y+2,x1-Math.multiply(4,direction),y+4);
+		do Screen.drawLine(x1+Math.multiply(4,direction),y+2,x1+Math.multiply(4,direction),y+4);
+		do Screen.drawLine(x1-Math.multiply(3,direction),y+4,x1+Math.multiply(3,direction),y+4);
+		do Screen.drawLine(x1-Math.multiply(3,direction),y+5,x1-Math.multiply(3,direction),y+7);
+		do Screen.drawLine(x1+Math.multiply(3,direction),y+5,x1+Math.multiply(3,direction),y+7);
+		do Screen.drawLine(x1-Math.multiply(2,direction),y+7,x1-Math.multiply(2,direction),y+8);
+		do Screen.drawLine(x1+Math.multiply(1,direction),y+8,x1+Math.multiply(2,direction),y+8);
+		do Screen.drawLine(x1-Math.multiply(3,direction),y+9,x1+Math.multiply(2,direction),y+9);
+		do Screen.drawLine(x1-Math.multiply(3,direction),y+10,x1-Math.multiply(3,direction),y+16);
+		do Screen.drawPixel(x1+Math.multiply(2,direction),y+10);
+		do Screen.drawLine(x1+Math.multiply(3,direction),y+10,x1+Math.multiply(3,direction),y+16);
+		do Screen.drawPixel(x1+Math.multiply(2,direction),y+16);
+		do Screen.drawPixel(x1-Math.multiply(2,direction),y+16);
+		do Screen.drawPixel(x1+Math.multiply(4,direction),y+16);
+		do Screen.drawLine(x1+Math.multiply(1,direction),y+11,x1+Math.multiply(1,direction),y+17);
+		do Screen.drawLine(x1-Math.multiply(1,direction),y+11,x1-Math.multiply(1,direction),y+17);
+		do Screen.drawPixel(x1,y+17);
+		do Screen.drawLine(x1-Math.multiply(2,direction),y+17,x1-Math.multiply(2,direction),y+21);
+		do Screen.drawPixel(x1+Math.multiply(2,direction),y+21);
+		do Screen.drawLine(x1-Math.multiply(2,direction),y+22,x1+Math.multiply(2,direction),y+22);
+		do Screen.drawLine(x1-Math.multiply(2,direction),y+23,x1+Math.multiply(2,direction),y+23);
+		do Screen.drawLine(x1-Math.multiply(2,direction),y+24,x1+Math.multiply(2,direction),y+24);
+		do Screen.drawLine(x1+Math.multiply(3,direction),y+23,x1+Math.multiply(3,direction),y+24);
+		return;
+	}
+
+	method void drawSoldier()
+	{
+		do Screen.setColor(true);
+		if(round > 1)
+		{
+			if(Math.divide(health,Math.multiply(Math.divide(round,5),10)+10)>0)
+			{
+				do Screen.drawRectangle(x+10,y-4,x+9+Math.divide(health,Math.multiply(Math.divide(round,5),10)+10),y-3);
+			}
+			else
+			{
+				do Screen.drawRectangle(x+10,y-4,x+10,y-3);
+			}
+		}
+		else
+		{
+			if(Math.divide(health,5)>0)
+			{
+				do Screen.drawRectangle(x+10,y-4,x+9+Math.divide(health,5),y-3);
+			}
+			else
+			{
+				do Screen.drawRectangle(x+10,y-4,x+10,y-3);
+			}
+		}
+		do Screen.drawLine(x+11,y,x+18,y);
+		do Screen.drawRectangle(x+14,y+1,x+15,y+6);
+		do Screen.drawLine(x+11,y,x+11,y+3);
+		do Screen.drawLine(x+10,y+3,x+10,y+6);
+		do Screen.drawPixel(x+9,y+6);
+		do Screen.drawLine(x+18,y,x+18,y+3);
+		do Screen.drawLine(x+19,y+3,x+19,y+6);
+		do Screen.drawPixel(x+20,y+6);
+		do Screen.drawLine(x+9,y+7,x+19,y+7);
+		do Screen.drawLine(x+11,y+6,x+11,y+8);
+		do Screen.drawLine(x+18,y+6,x+18,y+8);
+		do Screen.drawPixel(x+12,y+8);
+		do Screen.drawPixel(x+17,y+8);
+		do Screen.drawRectangle(x+12,y+9,x+13,y+11);
+		do Screen.drawRectangle(x+16,y+9,x+17,y+11);
+		do Screen.drawLine(x+9,y+10,x+20,y+10);
+		do Screen.drawPixel(x+12,y+12);
+		do Screen.drawPixel(x+17,y+12);
+		do Screen.drawLine(x+9,y+11,x+9,y+19);
+		do Screen.drawLine(x+20,y+11,x+20,y+19);
+		do Screen.drawLine(x+10,y+19,x+10,y+20);
+		do Screen.drawLine(x+19,y+19,x+19,y+20);
+		do Screen.drawLine(x+11,y+12,x+11,y+23);
+		do Screen.drawLine(x+18,y+12,x+18,y+23);
+		do Screen.drawLine(x+12,y+18,x+17,y+18);
+		do Screen.drawLine(x+14,y+19,x+14,y+24);
+		do Screen.drawLine(x+15,y+19,x+15,y+24);
+		do Screen.drawRectangle(x+11,y+24,x+13,y+25);
+		do Screen.drawRectangle(x+16,y+24,x+18,y+25);
+		return;
+	}
+
+	method void upLeft()
+	{
+		do Screen.setColor(true);
+		if(round > 1)
+		{
+			if(Math.divide(health,Math.multiply(Math.divide(round,5),10)+10)>0)
+			{
+				do Screen.drawRectangle(x+10,y-4,x+9+Math.divide(health,Math.multiply(Math.divide(round,5),10)+10),y-3);
+			}
+			else
+			{
+				do Screen.drawRectangle(x+10,y-4,x+10,y-3);
+			}
+		}
+		else
+		{
+			if(Math.divide(health,5)>0)
+			{
+				do Screen.drawRectangle(x+10,y-4,x+9+Math.divide(health,5),y-3);
+			}
+			else
+			{
+				do Screen.drawRectangle(x+10,y-4,x+10,y-3);
+			}
+		}
+		do Screen.drawLine(x+11,y,x+18,y);
+		do Screen.drawRectangle(x+14,y+1,x+15,y+6);
+		do Screen.drawLine(x+11,y,x+11,y+3);
+		do Screen.drawLine(x+10,y+3,x+10,y+6);
+		do Screen.drawPixel(x+9,y+6);
+		do Screen.drawLine(x+18,y,x+18,y+3);
+		do Screen.drawLine(x+19,y+3,x+19,y+6);
+		do Screen.drawPixel(x+20,y+6);
+		do Screen.drawLine(x+9,y+7,x+19,y+7);
+		do Screen.drawLine(x+11,y+6,x+11,y+8);
+		do Screen.drawLine(x+18,y+6,x+18,y+8);
+		do Screen.drawPixel(x+12,y+8);
+		do Screen.drawPixel(x+17,y+8);
+		do Screen.drawRectangle(x+12,y+9,x+13,y+11);
+		do Screen.drawRectangle(x+16,y+9,x+17,y+11);
+		do Screen.drawLine(x+9,y+10,x+20,y+10);
+		do Screen.drawPixel(x+12,y+12);
+		do Screen.drawPixel(x+17,y+12);
+		do Screen.drawLine(x+9,y+11,x+9,y+19);
+		do Screen.drawLine(x+20,y+11,x+20,y+14);
+		do Screen.drawPixel(x+19,y+14);
+		do Screen.drawLine(x+10,y+19,x+10,y+20);
+		do Screen.drawLine(x+11,y+12,x+11,y+21);
+		do Screen.drawLine(x+18,y+12,x+18,y+23);
+		do Screen.drawLine(x+12,y+18,x+17,y+18);
+		do Screen.drawLine(x+14,y+19,x+14,y+21);
+		do Screen.drawLine(x+15,y+19,x+15,y+24);
+		do Screen.drawLine(x+12,y+21,x+13,y+21);
+		do Screen.drawRectangle(x+16,y+24,x+18,y+25);
+		return;
+	}
+
+	method void upRight()
+	{
+		do Screen.setColor(true);
+		if(round > 1)
+		{
+			if(Math.divide(health,Math.multiply(Math.divide(round,5),10)+10)>0)
+			{
+				do Screen.drawRectangle(x+10,y-4,x+9+Math.divide(health,Math.multiply(Math.divide(round,5),10)+10),y-3);
+			}
+			else
+			{
+				do Screen.drawRectangle(x+10,y-4,x+10,y-3);
+			}
+		}
+		else
+		{
+			if(Math.divide(health,5)>0)
+			{
+				do Screen.drawRectangle(x+10,y-4,x+9+Math.divide(health,5),y-3);
+			}
+			else
+			{
+				do Screen.drawRectangle(x+10,y-4,x+10,y-3);
+			}
+		}
+		do Screen.drawLine(x+11,y,x+18,y);
+		do Screen.drawRectangle(x+14,y+1,x+15,y+6);
+		do Screen.drawLine(x+11,y,x+11,y+3);
+		do Screen.drawLine(x+10,y+3,x+10,y+6);
+		do Screen.drawPixel(x+9,y+6);
+		do Screen.drawLine(x+18,y,x+18,y+3);
+		do Screen.drawLine(x+19,y+3,x+19,y+6);
+		do Screen.drawPixel(x+20,y+6);
+		do Screen.drawLine(x+9,y+7,x+19,y+7);
+		do Screen.drawLine(x+11,y+6,x+11,y+8);
+		do Screen.drawLine(x+18,y+6,x+18,y+8);
+		do Screen.drawPixel(x+12,y+8);
+		do Screen.drawPixel(x+17,y+8);
+		do Screen.drawRectangle(x+12,y+9,x+13,y+11);
+		do Screen.drawRectangle(x+16,y+9,x+17,y+11);
+		do Screen.drawLine(x+9,y+10,x+20,y+10);
+		do Screen.drawPixel(x+12,y+12);
+		do Screen.drawPixel(x+17,y+12);
+		do Screen.drawLine(x+9,y+11,x+9,y+14);
+		do Screen.drawPixel(x+10,y+14);
+		do Screen.drawLine(x+20,y+11,x+20,y+19);
+		do Screen.drawLine(x+19,y+19,x+19,y+20);
+		do Screen.drawLine(x+11,y+12,x+11,y+23);
+		do Screen.drawLine(x+18,y+12,x+18,y+21);
+		do Screen.drawLine(x+12,y+18,x+17,y+18);
+		do Screen.drawLine(x+14,y+19,x+14,y+24);
+		do Screen.drawLine(x+15,y+19,x+15,y+21);
+		do Screen.drawLine(x+16,y+21,x+17,y+21);
+		do Screen.drawRectangle(x+11,y+24,x+13,y+25);
+		return;
+	}
+}

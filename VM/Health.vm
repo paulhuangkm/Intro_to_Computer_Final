@@ -1,0 +1,166 @@
+function Health.new 0
+push constant 1
+call Memory.alloc 1
+pop pointer 0
+push constant 1000
+pop this 0
+push pointer 0
+return
+function Health.initial 0
+push argument 0
+pop pointer 0
+push constant 1000
+pop this 0
+push constant 0
+push constant 1
+call Output.moveCursor 2
+pop temp 0
+push constant 72
+call Output.printChar 1
+pop temp 0
+push constant 1
+push constant 1
+call Output.moveCursor 2
+pop temp 0
+push constant 69
+call Output.printChar 1
+pop temp 0
+push constant 2
+push constant 1
+call Output.moveCursor 2
+pop temp 0
+push constant 65
+call Output.printChar 1
+pop temp 0
+push constant 3
+push constant 1
+call Output.moveCursor 2
+pop temp 0
+push constant 76
+call Output.printChar 1
+pop temp 0
+push constant 4
+push constant 1
+call Output.moveCursor 2
+pop temp 0
+push constant 84
+call Output.printChar 1
+pop temp 0
+push constant 5
+push constant 1
+call Output.moveCursor 2
+pop temp 0
+push constant 72
+call Output.printChar 1
+pop temp 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 2
+push constant 67
+push constant 18
+push constant 253
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push constant 4
+push constant 69
+push constant 16
+push constant 251
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 5
+push constant 70
+push constant 15
+push constant 250
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return
+function Health.rhealth 0
+push argument 0
+pop pointer 0
+push this 0
+return
+function Health.drawHealthBar 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push constant 5
+push constant 70
+push this 0
+push constant 18
+call Math.multiply 2
+push constant 100
+call Math.divide 2
+add
+push constant 1
+add
+push constant 15
+push constant 251
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return
+function Health.clearHealth 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push constant 5
+push constant 70
+push constant 15
+push constant 250
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return
+function Health.dead 0
+push argument 0
+pop pointer 0
+push this 0
+push constant 0
+gt
+not
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 1
+return
+label IF_FALSE0
+push constant 0
+return
+function Health.decreaseHealth 0
+push argument 0
+pop pointer 0
+push this 0
+push argument 1
+sub
+pop this 0
+push this 0
+push constant 0
+gt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push pointer 0
+call Health.drawHealthBar 1
+pop temp 0
+push constant 0
+return
+label IF_FALSE0
+push pointer 0
+call Health.clearHealth 1
+pop temp 0
+push constant 0
+return

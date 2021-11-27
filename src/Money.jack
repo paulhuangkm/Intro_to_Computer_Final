@@ -1,0 +1,125 @@
+class Money
+{
+	field int amount, score, highScore;
+	field Health health;
+
+	constructor Money new(Health hin)
+	{
+		let amount=100;
+		let highScore=0;
+		let score=0;
+		let health = hin;
+		return this;
+	}
+
+	method void initial()
+	{
+		let amount=100;
+		do Output.moveCursor(1,5);
+		do Output.printChar(77);
+		do Output.printChar(111);
+		do Output.printChar(110);
+		do Output.printChar(101);
+		do Output.printChar(121);
+		do Output.printChar(58);
+		do Output.printChar(32);
+		do Output.moveCursor(1,11);
+		do Output.printChar(32);
+		do Output.printChar(32);
+		do Output.printChar(32);
+		do Output.printChar(32);
+		do Output.printChar(32);
+		do Output.moveCursor(1,11);
+		do Output.printInt(amount);
+		return;
+	}
+
+	method void killSoldier()
+	{
+		let amount = amount + 50;
+		let score = score + 50;
+		return;
+	}
+
+	method void printScore(int dead)
+	{
+		if(dead=1)
+		{
+			if( (score+amount) > highScore)
+			{
+				let highScore = (score+amount);
+			}
+			do Output.printInt(score+amount);
+			return;
+		}
+		if( (score+amount+health.rhealth()+500) > highScore)
+		{
+			let highScore = (score+amount+health.rhealth()+500);
+		}
+		do Output.printInt(score+amount+health.rhealth()+500);
+		return;
+	}
+	method void printHighScore()
+	{
+		do Output.printInt(highScore);
+		return;
+	}
+
+	method int buy(int price)
+	{
+		if(~(amount<price))
+		{
+			let amount= amount- price;
+			do printMoney();
+			do Output.moveCursor(2,5);
+			do Output.printChar(32);
+			do Output.printChar(32);
+			do Output.printChar(32);
+			do Output.printChar(32);
+			do Output.printChar(32);
+			do Output.printChar(32);
+			do Output.printChar(32);
+			do Output.printChar(32);
+			do Output.printChar(32);
+			do Output.printChar(32);
+			do Output.printChar(32);
+			do Output.printChar(32);
+			do Output.printChar(32);
+			do Output.printChar(32);
+			do Output.printChar(32);
+			do Output.printChar(32);
+			return 1;
+		}
+		do Output.moveCursor(2,5);
+		do Output.printChar(78);
+		do Output.printChar(111);
+		do Output.printChar(116);
+		do Output.printChar(32);
+		do Output.printChar(101);
+		do Output.printChar(110);
+		do Output.printChar(111);
+		do Output.printChar(117);
+		do Output.printChar(103);
+		do Output.printChar(104);
+		do Output.printChar(32);
+		do Output.printChar(109);
+		do Output.printChar(111);
+		do Output.printChar(110);
+		do Output.printChar(101);
+		do Output.printChar(121);
+		return 0;
+	}
+
+	method void printMoney()
+	{
+		do Output.moveCursor(1,11);
+		do Output.printChar(32);
+		do Output.printChar(32);
+		do Output.printChar(32);
+		do Output.printChar(32);
+		do Output.printChar(32);
+		do Output.moveCursor(1,11);
+		do Output.printInt(amount);
+		return;
+	}
+}

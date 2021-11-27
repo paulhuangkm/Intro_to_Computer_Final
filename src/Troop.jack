@@ -1,0 +1,884 @@
+class Troop
+{
+	field Soldier s1;
+	field Soldier s2;
+	field Soldier s3;
+	field Soldier s4;
+	field Soldier s5;
+	field Soldier s6;
+	field Soldier s7;
+	field Soldier s8;
+	field Soldier s9;
+	field Soldier s10;
+	field Soldier s11;
+	field Soldier s12;
+	field Soldier s13;
+	field Soldier s14;
+	field Soldier s15;
+	field Control control;
+
+	constructor Troop new()
+	{
+                let s1 = Soldier.new(1,0);
+                let s2 = Soldier.new(1,0);
+                let s3 = Soldier.new(1,0);
+                let s4 = Soldier.new(1,0);
+                let s5 = Soldier.new(1,0);
+                let s6 = Soldier.new(1,0);
+                let s7 = Soldier.new(1,0);
+                let s8 = Soldier.new(1,0);
+                let s9 = Soldier.new(1,0);
+                let s10 = Soldier.new(1,0);
+                let s11 = Soldier.new(1,0);
+                let s12 = Soldier.new(1,0);
+                let s13 = Soldier.new(1,0);
+                let s14 = Soldier.new(1,0);
+                let s15 = Soldier.new(1,0);
+		return this;
+	}
+
+	method void addControl(Control cin)
+	{
+		let control = cin;
+		return;
+	}
+
+	method void initial()
+	{
+		do s1.reset(1,0);
+		do s2.reset(1,0);
+		do s3.reset(1,0);
+		do s4.reset(1,0);
+		do s5.reset(1,0);
+		do s6.reset(1,0);
+		do s7.reset(1,0);
+		do s8.reset(1,0);
+		do s9.reset(1,0);
+		do s10.reset(1,0);
+		do s11.reset(1,0);
+		do s12.reset(1,0);
+		do s13.reset(1,0);
+		do s14.reset(1,0);
+		do s15.reset(1,0);
+		return;
+	}
+
+	method int rx(int person)
+	{
+                if( person = 1 )
+                {
+                        return s1.rx();
+                }
+                if( person = 2 )
+                {
+                        return s2.rx();
+                }
+                if( person = 3 )
+                {
+                        return s3.rx();
+                }
+                if( person = 4 )
+                {
+                        return s4.rx();
+                }
+                if( person = 5 )
+                {
+                        return s5.rx();
+                }
+                if( person = 6 )
+                {
+                        return s6.rx();
+                }
+                if( person = 7 )
+                {
+                        return s7.rx();
+                }
+                if( person = 8 )
+                {
+                        return s8.rx();
+                }
+                if( person = 9 )
+                {
+                        return s9.rx();
+                }
+                if( person = 10 )
+                {
+                        return s10.rx();
+                }
+                if( person = 11 )
+                {
+                        return s11.rx();
+                }
+                if( person = 12 )
+                {
+                        return s12.rx();
+                }
+                if( person = 13 )
+                {
+                        return s13.rx();
+                }
+                if( person = 14 )
+                {
+                        return s14.rx();
+                }
+                if( person = 15 )
+                {
+                        return s15.rx();
+                }
+		return 0;
+	}
+
+	method int ry(int person)
+	{
+                if( person = 1 )
+                {
+                        return s1.ry();
+                }
+                if( person = 2 )
+                {
+                        return s2.ry();
+                }
+                if( person = 3 )
+                {
+                        return s3.ry();
+                }
+                if( person = 4 )
+                {
+                        return s4.ry();
+                }
+                if( person = 5 )
+                {
+                        return s5.ry();
+                }
+                if( person = 6 )
+                {
+                        return s6.ry();
+                }
+                if( person = 7 )
+                {
+                        return s7.ry();
+                }
+                if( person = 8 )
+                {
+                        return s8.ry();
+                }
+                if( person = 9 )
+                {
+                        return s9.ry();
+                }
+                if( person = 10 )
+                {
+                        return s10.ry();
+                }
+                if( person = 11 )
+                {
+                        return s11.ry();
+                }
+                if( person = 12 )
+                {
+                        return s12.ry();
+                }
+                if( person = 13 )
+                {
+                        return s13.ry();
+                }
+                if( person = 14 )
+                {
+                        return s14.ry();
+                }
+                if( person = 15 )
+                {
+                        return s15.ry();
+                }
+		return 0;
+	}
+
+	method int damage(int person,int d)
+	{
+                if( person = 1 )
+                {
+                        return s1.damage(d);
+                }
+                if( person = 2 )
+                {
+                        return s2.damage(d);
+                }
+                if( person = 3 )
+                {
+                        return s3.damage(d);
+                }
+                if( person = 4 )
+                {
+                        return s4.damage(d);
+                }
+                if( person = 5 )
+                {
+                        return s5.damage(d);
+                }
+                if( person = 6 )
+                {
+                        return s6.damage(d);
+                }
+                if( person = 7 )
+                {
+                        return s7.damage(d);
+                }
+                if( person = 8 )
+                {
+                        return s8.damage(d);
+                }
+                if( person = 9 )
+                {
+                        return s9.damage(d);
+                }
+                if( person = 10 )
+                {
+                        return s10.damage(d);
+                }
+                if( person = 11 )
+                {
+                        return s11.damage(d);
+                }
+                if( person = 12 )
+                {
+                        return s12.damage(d);
+                }
+                if( person = 13 )
+                {
+                        return s13.damage(d);
+                }
+                if( person = 14 )
+                {
+                        return s14.damage(d);
+                }
+                if( person = 15 )
+                {
+                        return s15.damage(d);
+                }
+		return 0;
+	}
+
+	method int initial1(int round0,Buildings tower,Money money,Health health)
+	{
+		var int dead;
+		let dead = 0;
+		do s2.reset(round0,2);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		do s5.reset(round0,2);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		do s8.reset(round0,2);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		do s11.reset(round0,2);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		do s14.reset(round0,2);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		return dead;
+	}
+
+	method int initial2(int round0,Buildings tower,Money money,Health health)
+	{
+		var int dead;
+		let dead = 0;
+		do s1.reset(round0,1);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		do s4.reset(round0,1);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		do s7.reset(round0,1);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		do s10.reset(round0,1);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		do s13.reset(round0,1);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		return dead;
+	}
+
+	method int initial3(int round0,Buildings tower,Money money,Health health)
+	{
+		var int dead;
+		let dead = 0;
+		do s3.reset(round0,3);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		do s6.reset(round0,3);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		do s9.reset(round0,3);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		do s12.reset(round0,3);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		do s15.reset(round0,3);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		return dead;
+	}
+
+	method int initial4(int round0,Buildings tower,Money money,Health health)
+	{
+		var int dead;
+		let dead = 0;
+		do s1.reset(round0,1);
+		do s3.reset(round0,3);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		do s4.reset(round0,1);
+		do s6.reset(round0,3);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		do s7.reset(round0,1);
+		do s9.reset(round0,3);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		do s10.reset(round0,1);
+		do s12.reset(round0,3);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		do s13.reset(round0,1);
+		do s15.reset(round0,3);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		return dead;
+	}
+
+	method int initial5(int round0,Buildings tower,Money money,Health health)
+	{
+		var int dead;
+		let dead = 0;
+		do s1.reset(round0,1);
+		do s2.reset(round0,2);
+		do s3.reset(round0,3);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		do s4.reset(round0,1);
+		do s5.reset(round0,2);
+		do s6.reset(round0,3);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		do s7.reset(round0,1);
+		do s8.reset(round0,2);
+		do s9.reset(round0,3);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		do s10.reset(round0,1);
+		do s11.reset(round0,2);
+		do s12.reset(round0,3);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		do s13.reset(round0,1);
+		do s14.reset(round0,2);
+		do s15.reset(round0,3);
+		let dead = dead + walk(tower,money,health);
+		let dead = dead + walk(tower,money,health);
+		return dead;
+	}
+
+	method void clearRoad()
+	{
+		do Screen.setColor(false);
+		do Screen.drawRectangle(236,70,274,100);
+		do Screen.drawRectangle(87,101,423,138);
+		do Screen.drawRectangle(87,139,124,255);
+		do Screen.drawRectangle(236,139,274,255);
+		do Screen.drawRectangle(386,139,423,255);
+		return;
+	}
+
+	method void drawAllSoldier()
+	{
+		if(s1.rhealth()>0)
+		{
+			if( s1.ry()>115 )
+			{
+				do s1.drawSoldier();
+			}
+			else
+			{
+				if( s1.rx()<239 )
+				{
+					do s1.drawSide(1);
+				}
+				else
+				{
+					if( s1.rx()>246 )
+					{
+						do s1.drawSide(-1);
+					}
+					else
+					{
+						do s1.drawSoldier();
+					}
+				}
+			}
+		}
+		if(s2.rhealth()>0)
+		{
+			if( s2.ry()>115 )
+			{
+				do s2.drawSoldier();
+			}
+			else
+			{
+				if( s2.rx()<239 )
+				{
+					do s2.drawSide(1);
+				}
+				else
+				{
+					if( s2.rx()>246 )
+					{
+						do s2.drawSide(-1);
+					}
+					else
+					{
+						do s2.drawSoldier();
+					}
+				}
+			}
+		}
+		if(s3.rhealth()>0)
+		{
+			if( s3.ry()>115 )
+			{
+				do s3.drawSoldier();
+			}
+			else
+			{
+				if( s3.rx()<239 )
+				{
+					do s3.drawSide(1);
+				}
+				else
+				{
+					if( s3.rx()>246 )
+					{
+						do s3.drawSide(-1);
+					}
+					else
+					{
+						do s3.drawSoldier();
+					}
+				}
+			}
+		}
+		if(s4.rhealth()>0)
+		{
+			if( s4.ry()>115 )
+			{
+				do s4.drawSoldier();
+			}
+			else
+			{
+				if( s4.rx()<239 )
+				{
+					do s4.drawSide(1);
+				}
+				else
+				{
+					if( s4.rx()>246 )
+					{
+						do s4.drawSide(-1);
+					}
+					else
+					{
+						do s4.drawSoldier();
+					}
+				}
+			}
+		}
+		if(s5.rhealth()>0)
+		{
+			if( s5.ry()>115 )
+			{
+				do s5.drawSoldier();
+			}
+			else
+			{
+				if( s5.rx()<239 )
+				{
+					do s5.drawSide(1);
+				}
+				else
+				{
+					if( s5.rx()>246 )
+					{
+						do s5.drawSide(-1);
+					}
+					else
+					{
+						do s5.drawSoldier();
+					}
+				}
+			}
+		}
+		if(s6.rhealth()>0)
+		{
+			if( s6.ry()>115 )
+			{
+				do s6.drawSoldier();
+			}
+			else
+			{
+				if( s6.rx()<239 )
+				{
+					do s6.drawSide(1);
+				}
+				else
+				{
+					if( s6.rx()>246 )
+					{
+						do s6.drawSide(-1);
+					}
+					else
+					{
+						do s6.drawSoldier();
+					}
+				}
+			}
+		}
+		if(s7.rhealth()>0)
+		{
+			if( s7.ry()>115 )
+			{
+				do s7.drawSoldier();
+			}
+			else
+			{
+				if( s7.rx()<239 )
+				{
+					do s7.drawSide(1);
+				}
+				else
+				{
+					if( s7.rx()>246 )
+					{
+						do s7.drawSide(-1);
+					}
+					else
+					{
+						do s7.drawSoldier();
+					}
+				}
+			}
+		}
+		if(s8.rhealth()>0)
+		{
+			if( s8.ry()>115 )
+			{
+				do s8.drawSoldier();
+			}
+			else
+			{
+				if( s8.rx()<239 )
+				{
+					do s8.drawSide(1);
+				}
+				else
+				{
+					if( s8.rx()>246 )
+					{
+						do s8.drawSide(-1);
+					}
+					else
+					{
+						do s8.drawSoldier();
+					}
+				}
+			}
+		}
+		if(s9.rhealth()>0)
+		{
+			if( s9.ry()>115 )
+			{
+				do s9.drawSoldier();
+			}
+			else
+			{
+				if( s9.rx()<239 )
+				{
+					do s9.drawSide(1);
+				}
+				else
+				{
+					if( s9.rx()>246 )
+					{
+						do s9.drawSide(-1);
+					}
+					else
+					{
+						do s9.drawSoldier();
+					}
+				}
+			}
+		}
+		if(s10.rhealth()>0)
+		{
+			if( s10.ry()>115 )
+			{
+				do s10.drawSoldier();
+			}
+			else
+			{
+				if( s10.rx()<239 )
+				{
+					do s10.drawSide(1);
+				}
+				else
+				{
+					if( s10.rx()>246 )
+					{
+						do s10.drawSide(-1);
+					}
+					else
+					{
+						do s10.drawSoldier();
+					}
+				}
+			}
+		}
+		if(s11.rhealth()>0)
+		{
+			if( s11.ry()>115 )
+			{
+				do s11.drawSoldier();
+			}
+			else
+			{
+				if( s11.rx()<239 )
+				{
+					do s11.drawSide(1);
+				}
+				else
+				{
+					if( s11.rx()>246 )
+					{
+						do s11.drawSide(-1);
+					}
+					else
+					{
+						do s11.drawSoldier();
+					}
+				}
+			}
+		}
+		if(s12.rhealth()>0)
+		{
+			if( s12.ry()>115 )
+			{
+				do s12.drawSoldier();
+			}
+			else
+			{
+				if( s12.rx()<239 )
+				{
+					do s12.drawSide(1);
+				}
+				else
+				{
+					if( s12.rx()>246 )
+					{
+						do s12.drawSide(-1);
+					}
+					else
+					{
+						do s12.drawSoldier();
+					}
+				}
+			}
+		}
+		if(s13.rhealth()>0)
+		{
+			if( s13.ry()>115 )
+			{
+				do s13.drawSoldier();
+			}
+			else
+			{
+				if( s13.rx()<239 )
+				{
+					do s13.drawSide(1);
+				}
+				else
+				{
+					if( s13.rx()>246 )
+					{
+						do s13.drawSide(-1);
+					}
+					else
+					{
+						do s13.drawSoldier();
+					}
+				}
+			}
+		}
+		if(s14.rhealth()>0)
+		{
+			if( s14.ry()>115 )
+			{
+				do s14.drawSoldier();
+			}
+			else
+			{
+				if( s14.rx()<239 )
+				{
+					do s14.drawSide(1);
+				}
+				else
+				{
+					if( s14.rx()>246 )
+					{
+						do s14.drawSide(-1);
+					}
+					else
+					{
+						do s14.drawSoldier();
+					}
+				}
+			}
+		}
+		if(s15.rhealth()>0)
+		{
+			if( s15.ry()>115 )
+			{
+				do s15.drawSoldier();
+			}
+			else
+			{
+				if( s15.rx()<239 )
+				{
+					do s15.drawSide(1);
+				}
+				else
+				{
+					if( s15.rx()>246 )
+					{
+						do s15.drawSide(-1);
+					}
+					else
+					{
+						do s15.drawSoldier();
+					}
+				}
+			}
+		}
+
+		return;
+	}
+
+	method void readAndWait()
+	{
+		var int x;
+		let x=0;
+		while(x<40)
+		{
+			do control.read(0);
+                	do Sys.wait(4);
+			let x = x + 1;
+		}
+		return;
+	}
+
+	method int walk(Buildings buildings,Money money,Health health)
+	{
+		var int dead, count;
+		let dead = 0;
+		let count = 0;
+		if(~(buildings.canAttack(this)>0))
+		{
+			do readAndWait();
+			do readAndWait();
+			do readAndWait();
+			do readAndWait();
+		}
+		if(buildings.canAttack(this)>0)
+		{
+			do buildings.shoot();
+			let dead = buildings.attack(this);
+		}
+		while(count < dead)
+		{
+			do money.killSoldier();
+			let count = count + 1;
+		}
+		do money.printMoney();
+		
+		do clearRoad();
+                do s1.walk2();
+                do s2.walk2();
+                do s3.walk2();
+                do s4.walk2();
+                do s5.walk2();
+                do s6.walk2();
+                do s7.walk2();
+                do s8.walk2();
+                do s9.walk2();
+                do s10.walk2();
+                do s11.walk2();
+                do s12.walk2();
+                do s13.walk2();
+                do s14.walk2();
+                do s15.walk2();
+		do readAndWait();
+		do clearRoad();
+                do s1.walk3(health);
+                do s2.walk3(health);
+                do s3.walk3(health);
+                do s4.walk3(health);
+                do s5.walk3(health);
+                do s6.walk3(health);
+                do s7.walk3(health);
+                do s8.walk3(health);
+                do s9.walk3(health);
+                do s10.walk3(health);
+                do s11.walk3(health);
+                do s12.walk3(health);
+                do s13.walk3(health);
+                do s14.walk3(health);
+                do s15.walk3(health);
+		do readAndWait();
+		do clearRoad();
+                do s1.walk4();
+                do s2.walk4();
+                do s3.walk4();
+                do s4.walk4();
+                do s5.walk4();
+                do s6.walk4();
+                do s7.walk4();
+                do s8.walk4();
+                do s9.walk4();
+                do s10.walk4();
+                do s11.walk4();
+                do s12.walk4();
+                do s13.walk4();
+                do s14.walk4();
+                do s15.walk4();
+		do readAndWait();
+		do clearRoad();
+                do s1.walk5();
+                do s2.walk5();
+                do s3.walk5();
+                do s4.walk5();
+                do s5.walk5();
+                do s6.walk5();
+                do s7.walk5();
+                do s8.walk5();
+                do s9.walk5();
+                do s10.walk5();
+                do s11.walk5();
+                do s12.walk5();
+                do s13.walk5();
+                do s14.walk5();
+                do s15.walk5();
+		return dead;
+	}
+}

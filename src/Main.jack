@@ -1,0 +1,28 @@
+class Main
+{
+	function void main()
+	{
+		var Map map;
+		var Troop troop;
+		var Buildings buildings;
+		var Money money;
+		var Health health;
+		var Game game;
+		var Control control;
+
+		let health = Health.new();
+		let money = Money.new(health);
+		let troop = Troop.new();
+		let game = Game.new();
+		let control = Control.new(health,game,map,money);
+		let buildings = Buildings.new(money,troop,control);
+		do troop.addControl(control);
+		do control.addBuildings(buildings);
+		
+		do control.read(2);
+		do game.addControl(control);
+		do game.start(map,troop,money,health,buildings);
+
+		return;
+	}
+}

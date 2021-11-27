@@ -1,0 +1,74 @@
+class Health
+{
+	field int health;
+
+	constructor Health new()
+	{
+		let health = 1000;
+		return this;
+	}
+
+	method void initial()
+	{
+		let health = 1000;
+		do Output.moveCursor(0,1);
+		do Output.printChar(72);
+		do Output.moveCursor(1,1);
+		do Output.printChar(69);
+		do Output.moveCursor(2,1);
+		do Output.printChar(65);
+		do Output.moveCursor(3,1);
+		do Output.printChar(76);
+		do Output.moveCursor(4,1);
+		do Output.printChar(84);
+		do Output.moveCursor(5,1);
+		do Output.printChar(72);
+		do Screen.setColor(true);
+		do Screen.drawRectangle(2,67,18,253);
+		do Screen.setColor(false);
+		do Screen.drawRectangle(4,69,16,251);
+		do Screen.setColor(true);
+		do Screen.drawRectangle(5,70,15,250);
+		return;
+	}
+
+	method int rhealth()
+	{
+		return health;
+	}
+
+	method void drawHealthBar()
+	{
+		do Screen.setColor(false);
+		do Screen.drawRectangle(5,70+Math.divide(Math.multiply(health,18),100)+1,15,251);
+		return;
+	}
+
+	method void clearHealth()
+	{
+		do Screen.setColor(false);
+		do Screen.drawRectangle(5,70,15,250);
+		return;
+	}
+
+	method int dead()
+	{
+		if(~(health>0))
+		{
+			return 1;
+		}
+		return 0;
+	}
+
+	method void decreaseHealth(int num)
+	{
+		let health = health - num;
+		if(health>0)
+		{
+			do drawHealthBar();
+			return;
+		}
+		do clearHealth();
+		return;
+	}
+}

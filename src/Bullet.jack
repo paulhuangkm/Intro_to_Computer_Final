@@ -1,0 +1,159 @@
+class Bullet
+{
+	field int x0, y0, x1, y1, x2, y2, dx, dy, xt, yt, ratio, choose, i;
+
+	constructor Bullet new(int x, int y)
+	{
+		let x0 = x;
+		let y0 = y;
+		let x1 = x;
+		let y1 = y;
+		let x2 = x;
+		let y2 = y;
+		return this;
+	}
+
+	method void determine(int xin, int yin,int yes)
+	{
+		if(yes=0)
+		{
+			return;
+		}
+		let xt=xin;
+		let yt=yin;
+		let x1=x0;
+		let y1=y0;
+		let x2=x0;
+		let y2=y0;
+		let dx=xt-x1;
+		let dy=yt-y1;
+		let ratio = 1;
+		if((Math.abs(dx)>Math.abs(dy))&(~(dy=0)))
+		{
+			let ratio = dx/dy;
+			let choose = 1;
+		}
+		if((Math.abs(dy)>Math.abs(dx))&(~(dx=0)))
+		{
+			let ratio = dy/dx;
+			let choose = 2;
+		}
+		let i=ratio;
+		return;
+	}
+
+	method int shoot(int yes)
+	{
+		var int movex, movey;
+		let x2=x1;
+		let y2=y1;
+		let dx=xt-x1;
+		let dy=yt-y1;
+		if((Math.abs(dx)>Math.abs(dy))&(~(dy=0)))
+		{
+			let ratio = dx/dy;
+			let choose = 1;
+		}
+		if((Math.abs(dy)>Math.abs(dx))&(~(dx=0)))
+		{
+			let ratio = dy/dx;
+			let choose = 2;
+		}
+
+		if(yes=0)
+		{
+			return 0;
+		}
+		if( (((x1-xt)<8)&((x1-xt)>-8)) & (((y1-yt)<4)&((y1-yt)>-4)) )
+		{
+			do Screen.setColor(false);
+			do Screen.drawRectangle(x1-1,y1-1,x1+1,y1+1);
+			return 0;
+		}
+
+		let movex = 1;
+		if(dx=0)
+		{
+			let choose = 2;
+			let movex=0;
+		}
+		if(dx<0)
+		{
+			let movex=-1;
+		}
+
+		let movey = 1;
+		if(dy=0)
+		{
+			let choose = 1;
+			let movey=0;
+		}
+		if(dy<0)
+		{
+			let movey=-1;
+		}
+
+		if( Math.abs(dx) > (Math.abs(dy)+7))
+		{
+			let x1 = x1 + movex;
+		}
+		if( Math.abs(dy) > (Math.abs(dx)+7))
+		{
+			let y1 = y1 + movey;
+		}
+		if( Math.abs(dx) > (Math.abs(dy)+4))
+		{
+			let x1 = x1 + movex;
+		}
+		if( Math.abs(dy) > (Math.abs(dx)+4))
+		{
+			let y1 = y1 + movey;
+		}
+		if( Math.abs(dx) > 10)
+		{
+			let x1 = x1 + movex;
+		}
+		if( Math.abs(dy) > 10)
+		{
+			let y1 = y1 + movey;
+		}
+		
+		if(~((Math.abs(ratio)-1)>i))
+		{
+			if(~(((x1-xt)<4)&((x1-xt)>-4)))
+			{
+				let x1 = x1 + movex;
+			}
+			if(~(((y1-yt)<4)&((y1-yt)>-4)))
+			{
+				let y1 = y1 + movey;
+			}
+			let i=0;
+			do drawAll();
+			return 1;
+		}
+
+		if( (~(((x1-xt)<8)&((x1-xt)>-8))) & choose=1 )
+		{
+			let x1 = x1 + movex;
+		}
+		if( (~(((y1-yt)<4)&((y1-yt)>-4))) & choose=2 )
+		{
+			let y1 = y1 + movey;
+		}
+		let i=i+1;
+		do drawAll();
+
+		return 1;
+	}
+
+	method void drawAll()
+	{
+		do Screen.setColor(false);
+		do Screen.drawRectangle(x2-1,y2-1,x2+1,y2+1);
+		do Screen.setColor(true);
+		do Screen.drawRectangle(x1-1,y1-1,x1+1,y1+1);
+
+		return;
+	}
+}

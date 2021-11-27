@@ -1,0 +1,311 @@
+class Game
+{
+	field Map map;
+	field Troop troop;
+	field Buildings buildings;
+	field Money money;
+	field Health health;
+	field int continue;
+	field Control control;
+
+	constructor Game new()
+	{
+		let continue = 1;
+		return this;
+	}
+
+	method void addControl(Control cin)
+	{
+		let control = cin;
+		return;
+	}
+
+	method void start(Map map0,Troop troop0,Money money0,Health health0,Buildings buildings0)
+	{
+		var int round, remainder, dead;
+		let map = map0;
+		let money = money0;
+		let health = health0;
+		let troop = troop0;
+		let buildings = buildings0;
+		do Screen.clearScreen();
+		do Output.init();
+		do health.initial();
+		do troop.initial();
+		do money.initial();
+		do buildings.initial();
+		let round = 1;
+		do Screen.setColor(true);
+		do Screen.drawRectangle(393,0,511,60);
+		do Screen.setColor(false);
+		do Screen.drawRectangle(395,0,511,58);
+		do health.drawHealthBar();
+		do map.drawRoad();
+		do map.drawCastle();
+		do map.drawAllBase();
+		do Output.moveCursor(0,5);
+		do Output.printChar(87);
+		do Output.printChar(97);
+		do Output.printChar(118);
+		do Output.printChar(101);
+		do Output.printChar(58);
+		do Output.printChar(32);
+		do Output.moveCursor(3,5);
+		do Output.printChar(80);
+		do Output.printChar(114);
+		do Output.printChar(101);
+		do Output.printChar(115);
+		do Output.printChar(115);
+		do Output.printChar(32);
+		do Output.printInt(1);
+		do Output.printChar(126);
+		do Output.printInt(8);
+		do Output.printChar(32);
+		do Output.printChar(116);
+		do Output.printChar(111);
+		do Output.moveCursor(4,5);
+		do Output.printChar(115);
+		do Output.printChar(101);
+		do Output.printChar(108);
+		do Output.printChar(101);
+		do Output.printChar(99);
+		do Output.printChar(116);
+		do Output.printChar(32);
+		do Output.printChar(116);
+		do Output.printChar(111);
+		do Output.printChar(119);
+		do Output.printChar(101);
+		do Output.printChar(114);
+		while(round<21)
+		{
+			let remainder = round - Math.multiply(Math.divide(round,5),5);
+			do Output.moveCursor(0,10);
+			do Output.printInt(round);
+			if(remainder=1)
+			{
+				let dead = troop.initial1(round,buildings,money,health);
+				while(dead<5)
+				{
+					let dead = dead + troop.walk(buildings,money,health);
+				}
+			}
+			if(remainder=2)
+			{
+				let dead = troop.initial2(round,buildings,money,health);
+				while(dead<5)
+				{
+					let dead = dead + troop.walk(buildings,money,health);
+				}
+			}
+			if(remainder=3)
+			{
+				let dead = troop.initial3(round,buildings,money,health);
+				while(dead<5)
+				{
+					let dead = dead + troop.walk(buildings,money,health);
+				}
+			}
+			if(remainder=4)
+			{
+				let dead = troop.initial4(round,buildings,money,health);
+				while(dead<10)
+				{
+					let dead = dead + troop.walk(buildings,money,health);
+				}
+			}
+			if(remainder=0)
+			{
+				let dead = troop.initial5(round,buildings,money,health);
+				while(dead<15)
+				{
+					let dead = dead + troop.walk(buildings,money,health);
+				}
+			}
+			let round = round + 1;
+		}
+		do Output.moveCursor(0,10);
+		do Output.printInt(21);
+		let dead = troop.initial5(25,buildings,money,health);
+		while(dead<15)
+		{
+			let dead = dead + troop.walk(buildings,money,health);
+		}
+		do Output.moveCursor(0,10);
+		do Output.printInt(22);
+		let dead = troop.initial4(30,buildings,money,health);
+		while(dead<10)
+		{
+			let dead = dead + troop.walk(buildings,money,health);
+		}
+		do Output.moveCursor(0,10);
+		do Output.printInt(23);
+		let dead = troop.initial5(30,buildings,money,health);
+		while(dead<15)
+		{
+			let dead = dead + troop.walk(buildings,money,health);
+		}
+		do Output.moveCursor(0,10);
+		do Output.printInt(24);
+		let dead = troop.initial5(35,buildings,money,health);
+		while(dead<15)
+		{
+			let dead = dead + troop.walk(buildings,money,health);
+		}
+		do Output.moveCursor(0,10);
+		do Output.printChar(102);
+		do Output.printChar(105);
+		do Output.printChar(110);
+		do Output.printChar(97);
+		do Output.printChar(108);
+		do Output.printChar(33);
+		let dead = troop.initial5(45,buildings,money,health);
+		while(dead<15)
+		{
+			let dead = dead + troop.walk(buildings,money,health);
+		}
+		do control.read(1);
+		return;
+	}
+
+	method void restart()
+	{
+		var int round, remainder, dead;
+		do Screen.clearScreen();
+		do Output.init();
+		do health.initial();
+		do troop.initial();
+		do money.initial();
+		do buildings.initial();
+		let round = 1;
+		do Screen.setColor(true);
+		do Screen.drawRectangle(393,0,511,60);
+		do Screen.setColor(false);
+		do Screen.drawRectangle(395,0,511,58);
+		do health.drawHealthBar();
+		do map.drawRoad();
+		do map.drawCastle();
+		do map.drawAllBase();
+		do Output.moveCursor(0,5);
+		do Output.printChar(87);
+		do Output.printChar(97);
+		do Output.printChar(118);
+		do Output.printChar(101);
+		do Output.printChar(58);
+		do Output.printChar(32);
+		do Output.moveCursor(3,5);
+		do Output.printChar(80);
+		do Output.printChar(114);
+		do Output.printChar(101);
+		do Output.printChar(115);
+		do Output.printChar(115);
+		do Output.printChar(32);
+		do Output.printInt(1);
+		do Output.printChar(126);
+		do Output.printInt(8);
+		do Output.printChar(32);
+		do Output.printChar(116);
+		do Output.printChar(111);
+		do Output.moveCursor(4,5);
+		do Output.printChar(115);
+		do Output.printChar(101);
+		do Output.printChar(108);
+		do Output.printChar(101);
+		do Output.printChar(99);
+		do Output.printChar(116);
+		do Output.printChar(32);
+		do Output.printChar(116);
+		do Output.printChar(111);
+		do Output.printChar(119);
+		do Output.printChar(101);
+		do Output.printChar(114);
+		while(round<21)
+		{
+			let remainder = round - Math.multiply(Math.divide(round,5),5);
+			do Output.moveCursor(0,10);
+			do Output.printInt(round);
+			if(remainder=1)
+			{
+				let dead = troop.initial1(round,buildings,money,health);
+				while(dead<5)
+				{
+					let dead = dead + troop.walk(buildings,money,health);
+				}
+			}
+			if(remainder=2)
+			{
+				let dead = troop.initial2(round,buildings,money,health);
+				while(dead<5)
+				{
+					let dead = dead + troop.walk(buildings,money,health);
+				}
+			}
+			if(remainder=3)
+			{
+				let dead = troop.initial3(round,buildings,money,health);
+				while(dead<5)
+				{
+					let dead = dead + troop.walk(buildings,money,health);
+				}
+			}
+			if(remainder=4)
+			{
+				let dead = troop.initial4(round,buildings,money,health);
+				while(dead<10)
+				{
+					let dead = dead + troop.walk(buildings,money,health);
+				}
+			}
+			if(remainder=0)
+			{
+				let dead = troop.initial5(round,buildings,money,health);
+				while(dead<15)
+				{
+					let dead = dead + troop.walk(buildings,money,health);
+				}
+			}
+			let round = round + 1;
+		}
+		do Output.moveCursor(0,10);
+		do Output.printInt(21);
+		let dead = troop.initial5(25,buildings,money,health);
+		while(dead<15)
+		{
+			let dead = dead + troop.walk(buildings,money,health);
+		}
+		do Output.moveCursor(0,10);
+		do Output.printInt(22);
+		let dead = troop.initial4(30,buildings,money,health);
+		while(dead<10)
+		{
+			let dead = dead + troop.walk(buildings,money,health);
+		}
+		do Output.moveCursor(0,10);
+		do Output.printInt(23);
+		let dead = troop.initial5(30,buildings,money,health);
+		while(dead<15)
+		{
+			let dead = dead + troop.walk(buildings,money,health);
+		}
+		do Output.moveCursor(0,10);
+		do Output.printInt(24);
+		let dead = troop.initial5(35,buildings,money,health);
+		while(dead<15)
+		{
+			let dead = dead + troop.walk(buildings,money,health);
+		}
+		do Output.moveCursor(0,10);
+		do Output.printChar(102);
+		do Output.printChar(105);
+		do Output.printChar(110);
+		do Output.printChar(97);
+		do Output.printChar(108);
+		do Output.printChar(33);
+		let dead = troop.initial5(40,buildings,money,health);
+		while(dead<15)
+		{
+			let dead = dead + troop.walk(buildings,money,health);
+		}
+		do control.read(1);
+		return;
+	}
+}

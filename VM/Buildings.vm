@@ -1,0 +1,875 @@
+function Buildings.new 0
+push constant 20
+call Memory.alloc 1
+pop pointer 0
+push constant 1
+call Tower.new 1
+pop this 0
+push constant 2
+call Tower.new 1
+pop this 1
+push constant 3
+call Tower.new 1
+pop this 2
+push constant 4
+call Tower.new 1
+pop this 3
+push constant 5
+call Tower.new 1
+pop this 4
+push constant 6
+call Tower.new 1
+pop this 5
+push constant 7
+call Tower.new 1
+pop this 6
+push constant 8
+call Tower.new 1
+pop this 7
+push constant 152
+push constant 213
+call Bullet.new 2
+pop this 8
+push constant 184
+push constant 158
+call Bullet.new 2
+pop this 9
+push constant 216
+push constant 213
+call Bullet.new 2
+pop this 10
+push constant 216
+push constant 70
+call Bullet.new 2
+pop this 11
+push constant 304
+push constant 213
+call Bullet.new 2
+pop this 12
+push constant 304
+push constant 70
+call Bullet.new 2
+pop this 13
+push constant 328
+push constant 158
+call Bullet.new 2
+pop this 14
+push constant 360
+push constant 213
+call Bullet.new 2
+pop this 15
+push argument 0
+pop this 17
+push argument 2
+pop this 16
+push argument 1
+pop this 18
+push pointer 0
+return
+function Buildings.initial 0
+push argument 0
+pop pointer 0
+push this 0
+call Tower.initial 1
+pop temp 0
+push this 1
+call Tower.initial 1
+pop temp 0
+push this 2
+call Tower.initial 1
+pop temp 0
+push this 3
+call Tower.initial 1
+pop temp 0
+push this 4
+call Tower.initial 1
+pop temp 0
+push this 5
+call Tower.initial 1
+pop temp 0
+push this 6
+call Tower.initial 1
+pop temp 0
+push this 7
+call Tower.initial 1
+pop temp 0
+push constant 0
+return
+function Buildings.shoot 26
+push argument 0
+pop pointer 0
+push constant 0
+pop local 4
+push constant 0
+pop local 7
+push constant 0
+pop local 10
+push constant 0
+pop local 13
+push constant 0
+pop local 16
+push constant 0
+pop local 19
+push constant 0
+pop local 22
+push constant 0
+pop local 25
+push constant 1
+pop local 1
+push this 0
+push this 18
+call Tower.canAttack 2
+pop local 0
+push local 0
+push constant 0
+gt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 18
+push local 0
+call Troop.rx 2
+push constant 15
+add
+pop local 2
+push this 18
+push local 0
+call Troop.ry 2
+push constant 4
+add
+pop local 3
+push constant 1
+pop local 4
+label IF_FALSE0
+push this 1
+push this 18
+call Tower.canAttack 2
+pop local 0
+push local 0
+push constant 0
+gt
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push this 18
+push local 0
+call Troop.rx 2
+push constant 15
+add
+pop local 5
+push this 18
+push local 0
+call Troop.ry 2
+push constant 4
+add
+pop local 6
+push constant 1
+pop local 7
+label IF_FALSE1
+push this 2
+push this 18
+call Tower.canAttack 2
+pop local 0
+push local 0
+push constant 0
+gt
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push this 18
+push local 0
+call Troop.rx 2
+push constant 15
+add
+pop local 8
+push this 18
+push local 0
+call Troop.ry 2
+push constant 4
+add
+pop local 9
+push constant 1
+pop local 10
+label IF_FALSE2
+push this 3
+push this 18
+call Tower.canAttack 2
+pop local 0
+push local 0
+push constant 0
+gt
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push this 18
+push local 0
+call Troop.rx 2
+push constant 15
+add
+pop local 11
+push this 18
+push local 0
+call Troop.ry 2
+push constant 4
+add
+pop local 12
+push constant 1
+pop local 13
+label IF_FALSE3
+push this 4
+push this 18
+call Tower.canAttack 2
+pop local 0
+push local 0
+push constant 0
+gt
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push this 18
+push local 0
+call Troop.rx 2
+push constant 15
+add
+pop local 14
+push this 18
+push local 0
+call Troop.ry 2
+push constant 4
+add
+pop local 15
+push constant 1
+pop local 16
+label IF_FALSE4
+push this 5
+push this 18
+call Tower.canAttack 2
+pop local 0
+push local 0
+push constant 0
+gt
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push this 18
+push local 0
+call Troop.rx 2
+push constant 15
+add
+pop local 17
+push this 18
+push local 0
+call Troop.ry 2
+push constant 4
+add
+pop local 18
+push constant 1
+pop local 19
+label IF_FALSE5
+push this 6
+push this 18
+call Tower.canAttack 2
+pop local 0
+push local 0
+push constant 0
+gt
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push this 18
+push local 0
+call Troop.rx 2
+push constant 15
+add
+pop local 20
+push this 18
+push local 0
+call Troop.ry 2
+push constant 4
+add
+pop local 21
+push constant 1
+pop local 22
+label IF_FALSE6
+push this 7
+push this 18
+call Tower.canAttack 2
+pop local 0
+push local 0
+push constant 0
+gt
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push this 18
+push local 0
+call Troop.rx 2
+push constant 15
+add
+pop local 23
+push this 18
+push local 0
+call Troop.ry 2
+push constant 4
+add
+pop local 24
+push constant 1
+pop local 25
+label IF_FALSE7
+push this 8
+push local 2
+push local 3
+push local 4
+call Bullet.determine 4
+pop temp 0
+push this 9
+push local 5
+push local 6
+push local 7
+call Bullet.determine 4
+pop temp 0
+push this 10
+push local 8
+push local 9
+push local 10
+call Bullet.determine 4
+pop temp 0
+push this 11
+push local 11
+push local 12
+push local 13
+call Bullet.determine 4
+pop temp 0
+push this 12
+push local 14
+push local 15
+push local 16
+call Bullet.determine 4
+pop temp 0
+push this 13
+push local 17
+push local 18
+push local 19
+call Bullet.determine 4
+pop temp 0
+push this 14
+push local 20
+push local 21
+push local 22
+call Bullet.determine 4
+pop temp 0
+push this 15
+push local 23
+push local 24
+push local 25
+call Bullet.determine 4
+pop temp 0
+label WHILE_EXP0
+push local 1
+push constant 0
+gt
+not
+if-goto WHILE_END0
+push this 8
+push local 4
+call Bullet.shoot 2
+pop local 1
+push local 1
+push this 9
+push local 7
+call Bullet.shoot 2
+add
+pop local 1
+push local 1
+push this 10
+push local 10
+call Bullet.shoot 2
+add
+pop local 1
+push local 1
+push this 11
+push local 13
+call Bullet.shoot 2
+add
+pop local 1
+push local 1
+push this 12
+push local 16
+call Bullet.shoot 2
+add
+pop local 1
+push local 1
+push this 13
+push local 19
+call Bullet.shoot 2
+add
+pop local 1
+push local 1
+push this 14
+push local 22
+call Bullet.shoot 2
+add
+pop local 1
+push local 1
+push this 15
+push local 25
+call Bullet.shoot 2
+add
+pop local 1
+push this 19
+call Map.drawAllBase 1
+pop temp 0
+push this 19
+call Map.drawRoad 1
+pop temp 0
+push this 18
+call Troop.drawAllSoldier 1
+pop temp 0
+push this 0
+call Tower.drawTower 1
+pop temp 0
+push this 1
+call Tower.drawTower 1
+pop temp 0
+push this 2
+call Tower.drawTower 1
+pop temp 0
+push this 3
+call Tower.drawTower 1
+pop temp 0
+push this 4
+call Tower.drawTower 1
+pop temp 0
+push this 5
+call Tower.drawTower 1
+pop temp 0
+push this 6
+call Tower.drawTower 1
+pop temp 0
+push this 7
+call Tower.drawTower 1
+pop temp 0
+push this 16
+push constant 0
+call Control.read 2
+pop temp 0
+push constant 1
+call Sys.wait 1
+pop temp 0
+push this 16
+push constant 0
+call Control.read 2
+pop temp 0
+push constant 1
+call Sys.wait 1
+pop temp 0
+goto WHILE_EXP0
+label WHILE_END0
+push this 18
+call Troop.clearRoad 1
+pop temp 0
+push this 18
+call Troop.drawAllSoldier 1
+pop temp 0
+push constant 0
+return
+function Buildings.build 0
+push argument 0
+pop pointer 0
+push argument 1
+push constant 1
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 17
+push this 0
+call Tower.cost 1
+call Money.buy 2
+push constant 1
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push this 0
+push constant 1
+call Tower.buildTower 2
+pop temp 0
+push constant 0
+return
+label IF_FALSE1
+label IF_FALSE0
+push argument 1
+push constant 2
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push this 17
+push this 1
+call Tower.cost 1
+call Money.buy 2
+push constant 1
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push this 1
+push constant 1
+call Tower.buildTower 2
+pop temp 0
+push constant 0
+return
+label IF_FALSE3
+label IF_FALSE2
+push argument 1
+push constant 3
+eq
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push this 17
+push this 2
+call Tower.cost 1
+call Money.buy 2
+push constant 1
+eq
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push this 2
+push constant 1
+call Tower.buildTower 2
+pop temp 0
+push constant 0
+return
+label IF_FALSE5
+label IF_FALSE4
+push argument 1
+push constant 4
+eq
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push this 17
+push this 3
+call Tower.cost 1
+call Money.buy 2
+push constant 1
+eq
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push this 3
+push constant 1
+call Tower.buildTower 2
+pop temp 0
+push constant 0
+return
+label IF_FALSE7
+label IF_FALSE6
+push argument 1
+push constant 5
+eq
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
+push this 17
+push this 4
+call Tower.cost 1
+call Money.buy 2
+push constant 1
+eq
+if-goto IF_TRUE9
+goto IF_FALSE9
+label IF_TRUE9
+push this 4
+push constant 1
+call Tower.buildTower 2
+pop temp 0
+push constant 0
+return
+label IF_FALSE9
+label IF_FALSE8
+push argument 1
+push constant 6
+eq
+if-goto IF_TRUE10
+goto IF_FALSE10
+label IF_TRUE10
+push this 17
+push this 5
+call Tower.cost 1
+call Money.buy 2
+push constant 1
+eq
+if-goto IF_TRUE11
+goto IF_FALSE11
+label IF_TRUE11
+push this 5
+push constant 1
+call Tower.buildTower 2
+pop temp 0
+push constant 0
+return
+label IF_FALSE11
+label IF_FALSE10
+push argument 1
+push constant 7
+eq
+if-goto IF_TRUE12
+goto IF_FALSE12
+label IF_TRUE12
+push this 17
+push this 6
+call Tower.cost 1
+call Money.buy 2
+push constant 1
+eq
+if-goto IF_TRUE13
+goto IF_FALSE13
+label IF_TRUE13
+push this 6
+push constant 1
+call Tower.buildTower 2
+pop temp 0
+push constant 0
+return
+label IF_FALSE13
+label IF_FALSE12
+push argument 1
+push constant 8
+eq
+if-goto IF_TRUE14
+goto IF_FALSE14
+label IF_TRUE14
+push this 17
+push this 7
+call Tower.cost 1
+call Money.buy 2
+push constant 1
+eq
+if-goto IF_TRUE15
+goto IF_FALSE15
+label IF_TRUE15
+push this 7
+push constant 1
+call Tower.buildTower 2
+pop temp 0
+push constant 0
+return
+label IF_FALSE15
+label IF_FALSE14
+push constant 0
+return
+function Buildings.attack 1
+push argument 0
+pop pointer 0
+push this 0
+push argument 1
+call Tower.attack 2
+pop local 0
+push local 0
+push this 1
+push argument 1
+call Tower.attack 2
+add
+pop local 0
+push local 0
+push this 2
+push argument 1
+call Tower.attack 2
+add
+pop local 0
+push local 0
+push this 3
+push argument 1
+call Tower.attack 2
+add
+pop local 0
+push local 0
+push this 4
+push argument 1
+call Tower.attack 2
+add
+pop local 0
+push local 0
+push this 5
+push argument 1
+call Tower.attack 2
+add
+pop local 0
+push local 0
+push this 6
+push argument 1
+call Tower.attack 2
+add
+pop local 0
+push local 0
+push this 7
+push argument 1
+call Tower.attack 2
+add
+pop local 0
+push local 0
+return
+function Buildings.canAttack 1
+push argument 0
+pop pointer 0
+push this 0
+push argument 1
+call Tower.canAttack 2
+pop local 0
+push local 0
+push this 1
+push argument 1
+call Tower.canAttack 2
+add
+pop local 0
+push local 0
+push this 2
+push argument 1
+call Tower.canAttack 2
+add
+pop local 0
+push local 0
+push this 3
+push argument 1
+call Tower.canAttack 2
+add
+pop local 0
+push local 0
+push this 4
+push argument 1
+call Tower.canAttack 2
+add
+pop local 0
+push local 0
+push this 5
+push argument 1
+call Tower.canAttack 2
+add
+pop local 0
+push local 0
+push this 6
+push argument 1
+call Tower.canAttack 2
+add
+pop local 0
+push local 0
+push this 7
+push argument 1
+call Tower.canAttack 2
+add
+pop local 0
+push local 0
+return
+function Buildings.printStatus 0
+push argument 0
+pop pointer 0
+push argument 1
+push constant 1
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 0
+push constant 1
+call Tower.printStatus 2
+pop temp 0
+push constant 0
+return
+label IF_FALSE0
+push argument 1
+push constant 2
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push this 1
+push constant 2
+call Tower.printStatus 2
+pop temp 0
+push constant 0
+return
+label IF_FALSE1
+push argument 1
+push constant 3
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push this 2
+push constant 3
+call Tower.printStatus 2
+pop temp 0
+push constant 0
+return
+label IF_FALSE2
+push argument 1
+push constant 4
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push this 3
+push constant 4
+call Tower.printStatus 2
+pop temp 0
+push constant 0
+return
+label IF_FALSE3
+push argument 1
+push constant 5
+eq
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push this 4
+push constant 5
+call Tower.printStatus 2
+pop temp 0
+push constant 0
+return
+label IF_FALSE4
+push argument 1
+push constant 6
+eq
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push this 5
+push constant 6
+call Tower.printStatus 2
+pop temp 0
+push constant 0
+return
+label IF_FALSE5
+push argument 1
+push constant 7
+eq
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push this 6
+push constant 7
+call Tower.printStatus 2
+pop temp 0
+push constant 0
+return
+label IF_FALSE6
+push argument 1
+push constant 8
+eq
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push this 7
+push constant 8
+call Tower.printStatus 2
+pop temp 0
+push constant 0
+return
+label IF_FALSE7
+push constant 0
+return
