@@ -1,7 +1,7 @@
 # Tower Defense Game
 
 ## Author
-- 資工一 B08902072 黃國銘
+- Paul Huang
 
 ![](./img/f1)
 ## Game Introduction:
