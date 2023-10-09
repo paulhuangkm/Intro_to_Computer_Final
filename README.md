@@ -29,3 +29,6 @@ Another interesting part of the project was translating bitmap images into Jack 
 
 ## Demo Link
 [Youtube](https://www.youtube.com/watch?v=UtlRthFu4qo)
+
+## References
+- [Nand2Tetris](https://www.nand2tetris.org/)
