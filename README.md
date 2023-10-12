@@ -20,7 +20,7 @@ In this game, the players defend the castle from the enemies by building defensi
 - Game ending:
     - The screen shows player’s score and goes back to main menu
 
-## Short Story About the Map of My Mini Game:
+## Short Story About My Mini Game:
 The roads in the game were not designed to be straight lines at first, and there was a forest around the map when I first drew it (see Figure 8). However, since the forest and curvy roads have no obvious pattern to draw, it would use up too much ROM space, so I modified the map to the one you see today.
 
 ![](./img/f3)
